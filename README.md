@@ -32,5 +32,21 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         </sub>
       </a>
     </td>
+    <td align="center">
+      <a href="https://github.com/Brunogoniadis/">
+        <img src="https://avatars.githubusercontent.com/u/56612714?v=4" width="100px;" alt="Foto de Bruno Goniadis no GitHub"/ target="_blanck" ><br>
+        <sub>
+          <b>Bruno Goniadis</b>
+        </sub>
+      </a>
+    </td>
+        <td align="center">
+      <a href="https://github.com/NamyRibeiro">
+        <img src="https://avatars.githubusercontent.com/u/109562283?v=4" width="100px;" alt="Foto de NamyRibeiro no GitHub"/ target="_blanck" ><br>
+        <sub>
+          <b>Namy Ribeiro</b>
+        </sub>
+      </a>
+    </td>
   </tr>
 </table>
