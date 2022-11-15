@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://api.spacexdata.com", //exemplo de api - a definir
+  baseURL: "https://fakestoreapi.com/doc",
   timeout: 5000,
 });
