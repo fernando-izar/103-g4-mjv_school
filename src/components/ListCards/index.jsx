@@ -1,5 +1,5 @@
 import { Container } from "./style";
 
-const ListCards = () => {
+export const ListCards = () => {
   return <Container></Container>;
 };

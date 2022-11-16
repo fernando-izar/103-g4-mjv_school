@@ -1,5 +1,14 @@
+import Routes from "./routes";
+import { ProductProvider } from "./contexts/ProductContext";
+
 function App() {
-  return <h1>Group 4</h1>;
+  return (
+    <>
+      <ProductProvider>
+        <Routes />
+      </ProductProvider>
+    </>
+  );
 }
 
 export default App;
