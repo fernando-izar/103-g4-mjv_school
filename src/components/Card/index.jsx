@@ -11,7 +11,6 @@ export const Card = ({
 }) => {
   return (
     <Container>
-      <p>{title}</p>
       <img src={image} alt={title} />
     </Container>
   );
