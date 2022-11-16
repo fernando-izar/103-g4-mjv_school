@@ -1,5 +1,5 @@
 import Input from "../../components/Input";
 
-const Login = () => {
-  return <Input />;
+export const Login = () => {
+  return <h1>Login</h1>;
 };
