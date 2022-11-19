@@ -15,6 +15,7 @@
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
     "styled-components": "^5.3.6",
+    "svg-react-loader": "^0.4.6",
     "yup": "^0.32.11"
   },
   "devDependencies": {
