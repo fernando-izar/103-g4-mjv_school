@@ -16,7 +16,7 @@ export const InitialPage = () => {
               <ContainerText>
 
                 <h1>MJV E-Commerce Market</h1>
-                <h2>Aqui você encontra diversas opções de itens de <br></br> decoração, eletro, roupas... Aproveite!</h2>
+                <h2>Aqui você encontra diversas opções de itens de <br></br> joalheria, hardware, roupas... Aproveite!</h2>
                 <h3>“A promoções da Black Friday estão chegando!<br></br>  Economize aqui em nosso site!<br></br>  Não venha conhecer nossos produtos somente se não <br></br> quiser economizar dinheiro!”</h3>
              
               </ContainerText>
@@ -26,8 +26,8 @@ export const InitialPage = () => {
 
             <ContainerItens>
 
-              <Button label="Login" className="button" BackgroundColor="var(--color-primary-gradient)"></Button>
-              <Button label="Cadastrar" className="button"></Button>
+              <Button label="Login" className="button" BackgroundColor="var(--color-primary-gradient)" linkTo="/login"> </Button>
+              <Button label="Cadastrar" className="button" linkTo="/dashboard"> </Button>
 
             </ContainerItens>
           </MainContainer>
