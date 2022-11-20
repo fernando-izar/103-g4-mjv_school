@@ -2,15 +2,14 @@ import styled from "styled-components";
 
 export const Containerbutton = styled.div`
     
-    width: 85px;
     height: 50px;
-    
+    width: fit-content;
+
     display: flex;
-    justify-content: center;
+    align-self: center;
 
-
-    padding-left: 30%;
-    padding-right: 30%;
+    padding-left: 10%;
+    padding-right: 10%;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     
@@ -23,14 +22,10 @@ export const Containerbutton = styled.div`
 
     a{
         
+        width: fit-content;
+        
         display: flex;
-        position: absolute;
-        flex-direction: row;
         align-items: center;
-        justify-content: center;
-
-        width: 100px;
-        height: 50px;
 
         text-decoration: none;
         font-size: 15px;

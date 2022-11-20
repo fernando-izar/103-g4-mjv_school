@@ -2,6 +2,7 @@ import { MainContainer } from "./style";
 import { BackgroundColor } from "./style";
 import { ContainerItens } from "./style";
 import { ContainerText } from "./style";
+import { Containerbutton } from "./style";
 
 import {Button} from "../../components/Button/"
 import mjvLogo from "../../assets/mjvLogo.svg"
@@ -24,12 +25,12 @@ export const InitialPage = () => {
               
             </ContainerItens>
 
-            <ContainerItens>
+            <Containerbutton>
 
               <Button label="Login" className="button" BackgroundColor="var(--color-primary-gradient)" linkTo="/login"> </Button>
               <Button label="Cadastrar" className="button" linkTo="/dashboard"> </Button>
 
-            </ContainerItens>
+            </Containerbutton>
           </MainContainer>
     </BackgroundColor>
 
