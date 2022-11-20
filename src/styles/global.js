@@ -11,8 +11,10 @@ export const GlobalStyle = createGlobalStyle`
 * {
     margin: 0;
     box-sizing: border-box;
+}
 
-
+body{
+    background: var(--color-primary);
 }
 
 button {
@@ -24,13 +26,21 @@ h1, h2 , h3 {
     
 }
 
+body, input, button{
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+  }
+
+
 ul, ol, li {
     list-style: none;
     margin: 0px;
     padding: 0px;
 
 }
-
+fieldset, form{
+    border:none;
+}
 
 a, u {
     text-decoration: none;

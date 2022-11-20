@@ -9,8 +9,6 @@ export const Main = styled.main`
   margin: 0 auto;
   min-height: 100vh;
   max-width: 1080px;
-  main: auto;
-
   img {
     max-width: 135px;
   }
