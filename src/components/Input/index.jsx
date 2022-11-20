@@ -1,12 +1,12 @@
-import { Container } from "./style";
+import { Container } from './style'
 
 const Input = ({ id, label, type, name }) => {
   return (
     <Container>
-      <input type={type} name={name} id={id} placeholder=" " />
+      <input type={type} name={name} id={id} placeholder=" " required />
       <label htmlFor={id}>{label}</label>
     </Container>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input

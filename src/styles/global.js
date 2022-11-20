@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -31,8 +31,9 @@ ul, ol, li {
 
 }
 
+
 a, u {
     text-decoration: none;
 }
 
-`;
+`

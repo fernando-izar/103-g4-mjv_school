@@ -1,8 +1,8 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import { Login } from "../pages/Login";
-import { Register } from "../pages/Register";
-import { Dashboard } from "../pages/Dashboard";
-import { InitialPage } from "../pages/InitialPage";
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { Login } from '../pages/Login'
+import { Register } from '../pages/Register'
+import { Dashboard } from '../pages/Dashboard'
+import { InitialPage } from '../pages/InitialPage'
 
 const MainRoutes = () => {
   return (
@@ -14,7 +14,7 @@ const MainRoutes = () => {
 
       <Route path="*" element={<Navigate replace to="/login" />} />
     </Routes>
-  );
-};
+  )
+}
 
-export default MainRoutes;
+export default MainRoutes
