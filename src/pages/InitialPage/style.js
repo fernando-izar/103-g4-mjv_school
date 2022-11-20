@@ -30,6 +30,7 @@ export const MainContainer = styled.div`
 
     img{
         width: 10%;
+        height: fit-content;
         margin-bottom: 25px;
     }
 `
