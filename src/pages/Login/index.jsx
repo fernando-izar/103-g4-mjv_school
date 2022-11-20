@@ -26,7 +26,7 @@ export const Login = () => {
               BackgroundColor="var(--color-primary-gradient)"
             />
             {/* <button>Login</button> */}
-            <a href="#">Não é cadastrado ainda? Clique aqui. </a>
+            <a href="/register">Não é cadastrado ainda? Clique aqui.</a>
           </fieldset>
         </form>
       </Container>
