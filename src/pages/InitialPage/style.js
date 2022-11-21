@@ -30,6 +30,7 @@ export const MainContainer = styled.div`
 
     img{
         width: 10%;
+        height: fit-content;
         margin-bottom: 25px;
     }
 `
@@ -37,14 +38,22 @@ export const MainContainer = styled.div`
 export const ContainerItens = styled.div`
     
     display: flex;
+    width: auto;
     flex-direction: row;
-
     img{
         width: 25%;
         display: flex;
         margin-left: 160px;
     }
 `
+export const Containerbutton = styled.div`
+    display: flex;
+    width: 25%;
+    flex-direction: row;
+
+`
+
+
 
 export const ContainerText = styled.div`
     

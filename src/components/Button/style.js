@@ -2,15 +2,14 @@ import styled from "styled-components";
 
 export const Containerbutton = styled.div`
     
-    width: auto;
     height: 50px;
-    
-    display: flex;
-    align-items: center;
-    
-    padding-left: 30%;
-    padding-right: 30%;
+    width: fit-content;
 
+    display: flex;
+    align-self: center;
+
+    padding-left: 10%;
+    padding-right: 10%;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     
@@ -18,7 +17,20 @@ export const Containerbutton = styled.div`
     font-family: 'Poppins';
 
     :nth-child(2){
-        margin-left: 30%;
+        margin-left: 20%;
     }
 
-`
+    a{
+        
+        width: fit-content;
+        
+        display: flex;
+        align-items: center;
+
+        text-decoration: none;
+        font-size: 15px;
+        color: var(--color-text);
+
+    }`
+;
+
