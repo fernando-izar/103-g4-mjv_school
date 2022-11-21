@@ -1,14 +1,13 @@
 import {Containerbutton} from "./style"
-import { Link } from "react-router-dom"
 
 
 export function Button ({ label, className, BackgroundColor,linkTo }){
     
     return(
-        <Containerbutton style={{ background: BackgroundColor}} className={className} id={label} > 
-            <Link to={linkTo} className="Containerbutton">  
+        <> 
+            <Containerbutton style={{ background: BackgroundColor}} className={className} id={label}  to={linkTo}>  
                 {label}
-            </Link>
-        </Containerbutton>
+            </Containerbutton>
+        </>
         )
 }
