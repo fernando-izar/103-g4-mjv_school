@@ -3,18 +3,25 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
     :root {
-        --Color-primary: #8C477E;
-        --Color-primary-gradient: #102542
+        --color-text: #FFFFFF;
+        --color-primary: #8C477E;
+        --color-primary-gradient: #102542
     }
-
     
 * {
     margin: 0;
     box-sizing: border-box;
+
+
 }
 
 button {
     cursor: pointer;
+}
+
+h1, h2 , h3 {
+    font-family: 'Poppins';
+    
 }
 
 ul, ol, li {
