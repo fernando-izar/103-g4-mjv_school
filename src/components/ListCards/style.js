@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 85%;
   width: 100%;
+  height: 100%;
 
-  .cards {
+  ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
-    margin-left: 60px;
+    list-style: none;
+    gap: 1rem;
+    overflow: auto;
+
+    padding: 0 0rem 3rem 1rem;
+    margin: 0;
+    height: 100%;
   }
 `;
