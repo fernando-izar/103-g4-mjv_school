@@ -13,8 +13,6 @@ export const ListCards = () => {
   }
   return (
     <Container>
-      <h1>Products</h1>
-
       <ul className="cards">
         {productsList.map((product) => (
           <Card
