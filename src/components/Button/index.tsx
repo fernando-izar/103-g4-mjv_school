@@ -3,7 +3,7 @@ import { Containerbutton } from "./style";
 export interface IButtonProps {
   label: string;
   className: string;
-  BackgroundColor: string;
+  BackgroundColor?: string;
   linkTo: string;
 }
 
