@@ -1,6 +1,5 @@
 import { Container } from "./style";
 
-// const Logo = require("../../assets/mjv-logo.png");
 import logo from "../../assets/mjv-logo.png";
 
 export const AsideDashboard = () => {
