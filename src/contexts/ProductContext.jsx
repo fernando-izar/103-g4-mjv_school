@@ -11,7 +11,7 @@ export const ProductProvider = ({ children }) => {
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        const { data } = await api.get(`products?limit=10`);
+        const { data } = await api.get(`products?limit=20`);
         setProductsList(data);
       } catch (error) {
         console.log(error);
