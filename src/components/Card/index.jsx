@@ -1,6 +1,8 @@
 import { Container } from "./style";
+import { Link } from "react-router-dom";
 
 export const Card = ({
+  id,
   title,
   price,
   description,
@@ -13,7 +15,7 @@ export const Card = ({
     <Container>
       <div className="flip-card-inner">
         <div className="flip-card-front">
-          <img src={image} alt={title} />
+          <img src={image} alt={image} />
           <div className="flip-card-front-title">
             <div>
               <p>{category}</p>
@@ -27,6 +29,10 @@ export const Card = ({
           {/* <div className="flip-card-back-description">{description}</div> */}
           <div className="flip-card-back-rate">Rate: {rate}</div>
           <div className="flip-card-back-count">Count: {count}</div>
+          <div>{description}</div>
+          <div>
+            <Link to={`/dashboard/${id}`}>Description</Link>
+          </div>
         </div>
       </div>
     </Container>
