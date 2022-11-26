@@ -1,6 +1,13 @@
 import { Container } from "./style";
 
-const Input = ({ id, label, type, name }) => {
+export interface IInputProps {
+  id: string;
+  label: string;
+  type: string;
+  name: string;
+}
+
+const Input = ({ id, label, type, name }: IInputProps) => {
   return (
     <Container>
       <input type={type} name={name} id={id} placeholder=" " />
