@@ -13,19 +13,17 @@ export const ListCards = () => {
   }
   return (
     <Container>
-      <h1>Products</h1>
-
       <ul className="cards">
         {productsList.map((product) => (
           <Card
             key={product.id}
+            id={product.id}
             title={product.title}
             price={product.price}
             description={product.description}
             category={product.category}
             image={product.image}
-            rate={product.rating.rate}
-            count={product.rating.count}
+            rating={product.rating}
           />
         ))}
       </ul>
