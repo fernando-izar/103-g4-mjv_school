@@ -23,8 +23,7 @@ export const ListCards = () => {
             description={product.description}
             category={product.category}
             image={product.image}
-            rate={product.rating.rate}
-            count={product.rating.count}
+            rating={product.rating}
           />
         ))}
       </ul>

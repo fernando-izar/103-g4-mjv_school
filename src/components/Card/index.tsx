@@ -1,5 +1,6 @@
 import { Container } from "./style";
 import { Link } from "react-router-dom";
+import { IProducts } from "../../interfaces/products.interfaces";
 
 export const Card = ({
   id,
@@ -8,9 +9,8 @@ export const Card = ({
   description,
   category,
   image,
-  rate,
-  count,
-}) => {
+  rating,
+}: IProducts) => {
   return (
     <Container>
       <div className="flip-card-inner">
@@ -27,8 +27,8 @@ export const Card = ({
           <div className="flip-card-back-title">{title}</div>
           <div className="flip-card-back-price">${price}</div>
           {/* <div className="flip-card-back-description">{description}</div> */}
-          <div className="flip-card-back-rate">Rate: {rate}</div>
-          <div className="flip-card-back-count">Count: {count}</div>
+          <div className="flip-card-back-rate">Rate: {rating.rate}</div>
+          <div className="flip-card-back-count">Count: {rating.count}</div>
           <div>{description}</div>
           <div>
             <Link to={`/dashboard/${id}`}>Description</Link>

@@ -3,10 +3,11 @@ import { Container } from "./style";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
+import { IProducts } from "../../interfaces/products.interfaces";
 
 export const Description = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState<IProducts | null>(null);
   const [loadingProduct, setLoadingProduct] = useState(true);
 
   useEffect(() => {
