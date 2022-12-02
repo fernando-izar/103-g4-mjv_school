@@ -15,11 +15,15 @@ export const GlobalStyle = createGlobalStyle`
 
 }
 
+body{
+    width: 100%;
+}
+
 button {
     cursor: pointer;
 }
 
-h1, h2 , h3 {
+p, h1, h2 , h3 {
     font-family: 'Poppins';
     
 }

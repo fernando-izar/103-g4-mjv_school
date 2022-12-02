@@ -12,7 +12,7 @@ export const HeaderDashboard = () => {
               position: "absolute",
               left: "601px",
               top: "12px",
-              color: "#ffffff",
+              color: "black",
             }}
           />
         </div>
