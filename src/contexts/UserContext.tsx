@@ -3,6 +3,7 @@ import { IUser } from "../interfaces/user.interfaces";
 import { api } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { SubmitHandler } from "react-hook-form";
+import { IResponseUserLogin, IUserLogin } from "../interfaces/login.interfaces";
 
 interface IUserProviderProps {
   children: ReactNode;
@@ -19,9 +20,27 @@ export const UserContext = createContext<IUserProviderData>(
 
 export const UserProvider = ({ children }: IUserProviderProps) => {
   const [user, setUser] = useState<IUser | null>(null);
+  const [users, setUsers] = useState<IUser[]>([]);
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const { data } = await api.get<IUser[]>(`users`);
+
+        const obj = data.find((element) => (element.username = "johnd"));
+
+        obj && console.log("ID", obj.id);
+
+        setUsers(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getUsers();
+  }, []);
 
   useEffect(() => {
     const LoadUser = async () => {
@@ -42,6 +61,17 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     };
     LoadUser();
   }, [loading]);
+
+  const onSubmitLogin: SubmitHandler<IUserLogin> = async (data) => {
+    try {
+      const { data: responseData } = await api.post<IResponseUserLogin>(
+        `auth/login`,
+        data
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <UserContext.Provider value={{ loading, setLoading }}>
