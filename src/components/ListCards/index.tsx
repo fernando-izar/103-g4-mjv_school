@@ -5,10 +5,9 @@ import { Card } from "../Card";
 import { Container } from "./style";
 
 export const ListCards = () => {
-  const { productsList } = useContext(ProductContext);
-  const { loading } = useContext(UserContext);
+  const { productsList, loadingProducts } = useContext(ProductContext);
 
-  if (loading) {
+  if (loadingProducts) {
     return <h1>Loading</h1>;
   }
   return (

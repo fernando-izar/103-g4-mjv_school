@@ -14,6 +14,7 @@ interface IUserProviderData {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   onSubmitLogin: SubmitHandler<IUserLogin>;
   user: IUser | null;
+  logout: () => void;
 }
 
 export const UserContext = createContext<IUserProviderData>(
@@ -32,10 +33,6 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       try {
         const { data } = await api.get<IUser[]>(`users`);
 
-        // const obj = data.find((element) => (element.username = "johnd"));
-
-        // obj && console.log("ID", obj.id);
-
         setUsers(data);
       } catch (error) {
         console.log(error);
@@ -47,14 +44,20 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
   useEffect(() => {
     const LoadUser = async () => {
       const token = localStorage.getItem("@TOKEN");
+      const userId = localStorage.getItem("@USERID");
 
       if (token) {
         try {
           const userId = localStorage.getItem("@USERID");
-          api.defaults.headers.common.authorization = `Bearer ${token}`;
+          // api.defaults.headers.common.authorization = `Bearer ${token}`;
 
-          const { data } = await api.get<IUser>(`users/${userId}`);
-          setUser(data);
+          const { data: responseUserData } = await api.get<IUser>(
+            `users/${userId}`
+          );
+
+          console.log("loading", loading);
+
+          setUser(responseUserData);
         } catch (error) {
           console.log(error);
         }
@@ -92,8 +95,15 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     }
   };
 
+  const logout = () => {
+    localStorage.clear();
+    navigate("/login", { replace: true });
+  };
+
   return (
-    <UserContext.Provider value={{ loading, setLoading, onSubmitLogin, user }}>
+    <UserContext.Provider
+      value={{ loading, setLoading, onSubmitLogin, user, logout }}
+    >
       {children}
     </UserContext.Provider>
   );

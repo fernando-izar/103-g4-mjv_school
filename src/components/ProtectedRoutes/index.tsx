@@ -6,7 +6,7 @@ import { Container } from "./style";
 
 export const ProtectedRoutes = () => {
   const { loading, user } = useContext(UserContext);
-
+  console.log("user inside Protected Routes", user);
   if (loading) {
     return (
       <Container>
