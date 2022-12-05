@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { ProtectedRoutes } from "../components/ProtectedRoutes";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 import { Dashboard } from "../pages/Dashboard";
@@ -10,7 +11,9 @@ const MainRoutes = () => {
     <Routes>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
-      <Route path="/dashboard" element={<Dashboard />}></Route>
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
+      </Route>
       <Route path="/initialPage" element={<InitialPage />}></Route>
       <Route path="/dashboard/:id" element={<Description />}></Route>
 

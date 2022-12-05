@@ -13,6 +13,7 @@ interface IUserProviderData {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   onSubmitLogin: SubmitHandler<IUserLogin>;
+  user: IUser | null;
 }
 
 export const UserContext = createContext<IUserProviderData>(
@@ -92,7 +93,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ loading, setLoading, onSubmitLogin }}>
+    <UserContext.Provider value={{ loading, setLoading, onSubmitLogin, user }}>
       {children}
     </UserContext.Provider>
   );
