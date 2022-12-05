@@ -12,6 +12,7 @@ interface IUserProviderProps {
 interface IUserProviderData {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  onSubmitLogin: SubmitHandler<IUserLogin>;
 }
 
 export const UserContext = createContext<IUserProviderData>(
@@ -30,9 +31,9 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       try {
         const { data } = await api.get<IUser[]>(`users`);
 
-        const obj = data.find((element) => (element.username = "johnd"));
+        // const obj = data.find((element) => (element.username = "johnd"));
 
-        obj && console.log("ID", obj.id);
+        // obj && console.log("ID", obj.id);
 
         setUsers(data);
       } catch (error) {
@@ -68,13 +69,30 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
         `auth/login`,
         data
       );
+
+      api.defaults.headers.common.authorization = `Bearer ${responseData.token}`;
+
+      localStorage.setItem("@TOKEN", responseData.token);
+
+      const userLogged = users.find((user) => user.username == data.username);
+      const userId = userLogged?.id!.toString();
+
+      localStorage.setItem("@USERID", userId!);
+
+      const { data: responseUserData } = await api.get<IUser>(
+        `users/${userId}`
+      );
+
+      setUser(responseUserData);
+
+      navigate("/dashboard", { replace: true });
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <UserContext.Provider value={{ loading, setLoading }}>
+    <UserContext.Provider value={{ loading, setLoading, onSubmitLogin }}>
       {children}
     </UserContext.Provider>
   );
