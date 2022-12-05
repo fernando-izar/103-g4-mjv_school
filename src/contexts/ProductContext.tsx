@@ -15,6 +15,7 @@ interface IProductProviderProps {
 
 interface IProductProviderData {
   productsList: IProducts[];
+  loadingProducts: boolean;
 }
 
 export const ProductContext = createContext<IProductProviderData>(
@@ -23,7 +24,7 @@ export const ProductContext = createContext<IProductProviderData>(
 
 export const ProductProvider = ({ children }: IProductProviderProps) => {
   const [productsList, setProductsList] = useState<IProducts[]>([]);
-  const { loading, setLoading } = useContext(UserContext);
+  const [loadingProducts, setLoadingProducts] = useState(true);
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -33,15 +34,16 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
       } catch (error) {
         console.log(error);
       }
-      setLoading(false);
+      setLoadingProducts(false);
     };
     loadProducts();
-  }, [loading]);
+  }, [loadingProducts]);
 
   return (
     <ProductContext.Provider
       value={{
         productsList,
+        loadingProducts,
       }}
     >
       {children}

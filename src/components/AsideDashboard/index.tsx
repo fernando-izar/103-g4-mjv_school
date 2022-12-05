@@ -5,9 +5,7 @@ import logo from "../../assets/MjvLogo.svg";
 export const AsideDashboard = () => {
   return (
     <Container>
-      
-        <SvgLogo className="logo-img" src={logo} alt="logo" />
-
+      <SvgLogo className="logo-img" src={logo} alt="logo" />
     </Container>
   );
 };
