@@ -7,7 +7,6 @@ import { HeaderDashboard } from "../../components/HeaderDashboard";
 import { AsideDashboard } from "../../components/AsideDashboard";
 export const Dashboard = () => {
   const { user } = useContext(UserContext);
-  console.log("user inside Dashboard", user);
   return user ? (
     <Container>
       <AsideDashboard></AsideDashboard>

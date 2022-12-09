@@ -61,8 +61,6 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
             `users/${userId}`
           );
 
-          console.log("loading", loading);
-
           setUser(responseUserData);
         } catch (error) {
           console.log(error);
@@ -109,13 +107,11 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
   };
 
   const onSubmitRegister: SubmitHandler<IUserRequest> = async (data) => {
-    console.log("teste");
     try {
       const { data: responseData } = await api.post<IResponseUserRegister>(
         `users`,
         data
       );
-      console.log(responseData);
       navigate("/login", { replace: true });
       toast.success("Cadastro efetuado com sucesso!");
     } catch (error) {
