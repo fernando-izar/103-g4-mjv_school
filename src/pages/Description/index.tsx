@@ -6,6 +6,7 @@ import { api } from "../../services/api";
 import { IProducts } from "../../interfaces/products.interfaces";
 
 import { HeaderDashboard } from "../../components/HeaderDashboard";
+import { HeaderDescription } from "../../components/HeaderDescription";
 import { AsideDashboard } from "../../components/AsideDashboard";
 import { Button } from "../../components/Button";
 
@@ -34,8 +35,13 @@ export const Description = () => {
   if (!product) {
     return (
       <Container>
-        Product not found
-        <Link to="/dashboard">Voltar</Link>
+        <div className="product-not-found">
+          <p className="product-not-found-paragraph">Product not found</p>
+
+          <Link className="product-not-found-link" to="/dashboard">
+            Voltar
+          </Link>
+        </div>
       </Container>
     );
   }
@@ -45,8 +51,10 @@ export const Description = () => {
       <AsideDashboard></AsideDashboard>
 
       <div className="main-content">
-        <HeaderDashboard />
-        <Link to="/dashboard">Voltar</Link>
+        <HeaderDescription />
+        <Link className="product-not-found-link" to="/dashboard">
+          Voltar
+        </Link>
 
         <div className="bodyContainer">
           <div className="descriptionContainer">

@@ -39,6 +39,8 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       try {
         const { data } = await api.get<IUser[]>(`users`);
 
+        console.log(data);
+
         setUsers(data);
       } catch (error) {
         console.log(error);
@@ -84,6 +86,9 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
       const userLogged = users.find((user) => user.username == data.username);
       const userId = userLogged?.id!.toString();
+
+      console.log("users", users);
+      console.log("userId", userId);
 
       localStorage.setItem("@USERID", userId!);
 

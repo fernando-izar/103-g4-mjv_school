@@ -9,19 +9,30 @@ export const HeaderDashboard = () => {
   return (
     <Container>
       <div className="search-box">
-        <input type="text" placeholder="search itens"></input>
-        <div className="icon-outline-search">
-          <AiOutlineSearch
-            style={{
-              position: "absolute",
-              left: "601px",
-              top: "12px",
-              color: "black",
-            }}
-          />
-        </div>
+        <form className="search-form">
+          <input
+            type="text"
+            placeholder="Pesquise aqui pelo produto"
+            className="search-field"
+          ></input>
+          <button className="search-button">
+            <AiOutlineSearch
+              style={{
+                position: "absolute",
+                left: "393px",
+                top: "12px",
+                color: "black",
+                width: "20px",
+                height: "20px",
+                objectFit: "cover",
+              }}
+            />
+          </button>
+        </form>
       </div>
-      <button onClick={logout}>Sair</button>
+      <button className="button-logout" onClick={logout}>
+        Sair
+      </button>
     </Container>
   );
 };
