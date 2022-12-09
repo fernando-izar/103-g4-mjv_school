@@ -2,20 +2,34 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { Container } from "./style";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
+import { ProductContext } from "../../contexts/ProductContext";
 
 export const HeaderDashboard = () => {
   const { logout } = useContext(UserContext);
+  const { newSearch, setNewSearch, searched, setSearched } =
+    useContext(ProductContext);
+
+  function onSubmitHandler(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSearched(newSearch);
+    console.log("newSearch", newSearch);
+    console.log("searched", searched);
+  }
 
   return (
     <Container>
       <div className="search-box">
-        <form className="search-form">
+        <form onSubmit={onSubmitHandler} className="search-form">
           <input
             type="text"
             placeholder="Pesquise aqui pelo produto"
             className="search-field"
+            onChange={(event) => setNewSearch(event.target.value)}
           ></input>
-          <button className="search-button">
+          <button
+            onClick={() => setSearched(newSearch)}
+            className="search-button"
+          >
             <AiOutlineSearch
               style={{
                 position: "absolute",
