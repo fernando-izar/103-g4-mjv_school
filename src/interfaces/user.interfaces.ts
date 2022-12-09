@@ -26,3 +26,16 @@ export interface IName {
   firstname: string;
   lastname: string;
 }
+
+export interface IUserRequest {
+  email: string;
+  username: string;
+  password: string;
+  name: IName;
+  address: IAddress;
+  phone: string;
+}
+
+export interface IResponseUserRegister {
+  id: number;
+}

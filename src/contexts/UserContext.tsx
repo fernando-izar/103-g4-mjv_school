@@ -4,6 +4,10 @@ import { api } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { SubmitHandler } from "react-hook-form";
 import { IResponseUserLogin, IUserLogin } from "../interfaces/login.interfaces";
+import {
+  IUserRequest,
+  IResponseUserRegister,
+} from "../interfaces/user.interfaces";
 
 interface IUserProviderProps {
   children: ReactNode;
@@ -13,6 +17,7 @@ interface IUserProviderData {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   onSubmitLogin: SubmitHandler<IUserLogin>;
+  onSubmitRegister: SubmitHandler<IUserRequest>;
   user: IUser | null;
   logout: () => void;
 }
@@ -100,9 +105,30 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     navigate("/login", { replace: true });
   };
 
+  const onSubmitRegister: SubmitHandler<IUserRequest> = async (data) => {
+    console.log("teste");
+    try {
+      const { data: responseData } = await api.post<IResponseUserRegister>(
+        `users`,
+        data
+      );
+      console.log(responseData);
+      navigate("/login", { replace: true });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <UserContext.Provider
-      value={{ loading, setLoading, onSubmitLogin, user, logout }}
+      value={{
+        loading,
+        setLoading,
+        onSubmitLogin,
+        onSubmitRegister,
+        user,
+        logout,
+      }}
     >
       {children}
     </UserContext.Provider>

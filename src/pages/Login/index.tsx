@@ -5,7 +5,7 @@ import { Container } from "./style";
 export const Login = () => {
   return (
     <Container>
-      <FormLogin></FormLogin>
+      <FormLogin />
     </Container>
   );
 };

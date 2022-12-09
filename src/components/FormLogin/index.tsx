@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -6,7 +6,6 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formLoginSchema } from "../../validators/schemas";
 import { IUserLogin } from "../../interfaces/login.interfaces";
-import { Button } from "../Button";
 import { Container } from "./style";
 
 export const FormLogin = () => {
