@@ -6,8 +6,13 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formLoginSchema } from "../../validators/schemas";
 import { IUserLogin } from "../../interfaces/login.interfaces";
+
+import { Main } from "../../styles/main";
 import { Button } from "../Button";
 import { Container } from "./style";
+
+import { logo } from "../../assets/MjvLogo.svg";
+
 
 export const FormLogin = () => {
   const { onSubmitLogin } = useContext(UserContext);
@@ -29,22 +34,23 @@ export const FormLogin = () => {
   });
 
   return (
+    <Main>
+      <img src="logo"></img>
     <Container>
       <form onSubmit={handleSubmit(onSubmitLogin)}>
-        <label>UserName</label>
-        <input
+      <h1>Faça o seu login:</h1>
+        <input className="inputSlot"
           {...register("username")}
           type="text"
-          placeholder="Digite seu username"
+          placeholder="Username"
         />
         <p>{errors.username?.message}</p>
 
-        <label>Senha</label>
         <div className="eye-control">
           <input
             {...register("password")}
             type={isEyeOpen ? "text" : "password"}
-            placeholder="Digite sua senha"
+            placeholder="Senha"
           />
           <button
             style={{ color: "#ffffff" }}
@@ -61,16 +67,16 @@ export const FormLogin = () => {
         </div>
         <p>{errors.password?.message}</p>
         <button className="button-login" type="submit">
-          Login
+          Entrar
         </button>
-        <p>Ainda não possui uma conta?</p>
 
         <Link to="/register">
           <button className="button-register" type="submit">
-            Cadastre-se
+            Não é cadastrado ainda? Clique aqui.
           </button>
         </Link>
       </form>
     </Container>
+    </Main>
   );
 };
