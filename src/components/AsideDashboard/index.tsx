@@ -1,13 +1,11 @@
 import { Container } from "./style";
-
-import logo from "../../assets/mjv-logo.png";
+import { SvgLogo } from "./style";
+import logo from "../../assets/MjvLogo.svg";
 
 export const AsideDashboard = () => {
   return (
     <Container>
-      <figure className="logo-fig">
-        <img className="logo-img" src={logo} alt="logo" />
-      </figure>
+      <SvgLogo className="logo-img" src={logo} alt="logo" />
     </Container>
   );
 };

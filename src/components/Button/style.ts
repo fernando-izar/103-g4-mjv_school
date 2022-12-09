@@ -20,9 +20,7 @@ export const Containerbutton = styled(Link)`
     color: var(--color-text);
     font-family: 'Poppins';
 
-    :nth-child(2){
-        margin-left: 10%;
-    }
+
     
 `
 ;
