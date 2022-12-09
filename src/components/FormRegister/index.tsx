@@ -44,68 +44,60 @@ export const FormRegister = () => {
         <p>{errors.password?.message}</p>
 
         <label>Nome</label>
-        <input
-          {...register("name.firstname")}
-          type="text"
-          placeholder="Seu nome"
-        />
-        <p>{errors.name?.firstname?.message}</p>
+        <input {...register("firstname")} type="text" placeholder="Seu nome" />
+        <p>{errors.firstname?.message}</p>
 
         <label>Sobrenome</label>
         <input
-          {...register("name.lastname")}
+          {...register("lastname")}
           type="text"
           placeholder="Seu sobrenome"
         />
-        <p>{errors.name?.lastname?.message}</p>
+        <p>{errors.lastname?.message}</p>
 
         <label>Cidade</label>
-        <input
-          {...register("address.city")}
-          type="text"
-          placeholder="Sua cidade"
-        />
-        <p>{errors.address?.city?.message}</p>
+        <input {...register("city")} type="text" placeholder="Sua cidade" />
+        <p>{errors.city?.message}</p>
 
         <label>Rua</label>
         <input
-          {...register("address.street")}
+          {...register("street")}
           type="text"
           placeholder="Digite a sua rua"
         />
-        <p>{errors.address?.street?.message}</p>
+        <p>{errors.street?.message}</p>
 
         <label>Número</label>
         <input
-          {...register("address.number")}
+          {...register("number")}
           type="text"
-          placeholder="Digite o número da sua residência"
+          placeholder="Digite o número"
         />
-        <p>{errors.address?.number?.message}</p>
+        <p>{errors.number?.message}</p>
 
         <label>CEP</label>
         <input
-          {...register("address.zipcode")}
+          {...register("zipcode")}
           type="text"
           placeholder="Digite seu CEP"
         />
-        <p>{errors.address?.zipcode?.message}</p>
+        <p>{errors.zipcode?.message}</p>
 
         <label>Latitude</label>
         <input
-          {...register("address.geolocation.lat")}
+          {...register("lat")}
           type="text"
           placeholder="Latitude da sua residência"
         />
-        <p>{errors.address?.geolocation?.lat?.message}</p>
+        <p>{errors.lat?.message}</p>
 
         <label>Longitude</label>
         <input
-          {...register("address.geolocation.long")}
+          {...register("long")}
           type="text"
           placeholder="Longitude da sua residência"
         />
-        <p>{errors.address?.geolocation?.long?.message}</p>
+        <p>{errors.long?.message}</p>
 
         <label>Telefone/Celular</label>
         <input

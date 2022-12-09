@@ -31,8 +31,14 @@ export interface IUserRequest {
   email: string;
   username: string;
   password: string;
-  name: IName;
-  address: IAddress;
+  firstname: string;
+  lastname: string;
+  lat: string;
+  long: string;
+  city: string;
+  street: string;
+  number: number;
+  zipcode: string;
   phone: string;
 }
 
