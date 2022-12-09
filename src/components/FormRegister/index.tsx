@@ -19,7 +19,7 @@ export const FormRegister = () => {
   return (
     <Container>
       <form onSubmit={handleSubmit(onSubmitRegister)}>
-        <label>Username</label>
+        <h1>Faça seu cadastro:</h1>
         <input
           {...register("username")}
           type="text"
@@ -27,7 +27,6 @@ export const FormRegister = () => {
         />
         <p>{errors.username?.message}</p>
 
-        <label>Email</label>
         <input
           {...register("email")}
           type="email"
@@ -35,7 +34,6 @@ export const FormRegister = () => {
         />
         <p>{errors.email?.message}</p>
 
-        <label>Senha</label>
         <input
           {...register("password")}
           type="password"
@@ -43,11 +41,9 @@ export const FormRegister = () => {
         />
         <p>{errors.password?.message}</p>
 
-        <label>Nome</label>
         <input {...register("firstname")} type="text" placeholder="Seu nome" />
         <p>{errors.firstname?.message}</p>
 
-        <label>Sobrenome</label>
         <input
           {...register("lastname")}
           type="text"
@@ -55,11 +51,9 @@ export const FormRegister = () => {
         />
         <p>{errors.lastname?.message}</p>
 
-        <label>Cidade</label>
         <input {...register("city")} type="text" placeholder="Sua cidade" />
         <p>{errors.city?.message}</p>
 
-        <label>Rua</label>
         <input
           {...register("street")}
           type="text"
@@ -67,7 +61,6 @@ export const FormRegister = () => {
         />
         <p>{errors.street?.message}</p>
 
-        <label>Número</label>
         <input
           {...register("number")}
           type="text"
@@ -75,7 +68,6 @@ export const FormRegister = () => {
         />
         <p>{errors.number?.message}</p>
 
-        <label>CEP</label>
         <input
           {...register("zipcode")}
           type="text"
@@ -83,7 +75,6 @@ export const FormRegister = () => {
         />
         <p>{errors.zipcode?.message}</p>
 
-        <label>Latitude</label>
         <input
           {...register("lat")}
           type="text"
@@ -91,7 +82,6 @@ export const FormRegister = () => {
         />
         <p>{errors.lat?.message}</p>
 
-        <label>Longitude</label>
         <input
           {...register("long")}
           type="text"
@@ -99,7 +89,6 @@ export const FormRegister = () => {
         />
         <p>{errors.long?.message}</p>
 
-        <label>Telefone/Celular</label>
         <input
           {...register("phone")}
           type="text"
@@ -107,7 +96,7 @@ export const FormRegister = () => {
         />
         <p>{errors.phone?.message}</p>
 
-        <button type="submit">Cadastrar</button>
+        <button className="button-register" type="submit">Cadastrar</button>
       </form>
     </Container>
   );
