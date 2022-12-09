@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -12,7 +12,6 @@ import { Button } from "../Button";
 import { Container } from "./style";
 
 import { logo } from "../../assets/MjvLogo.svg";
-
 
 export const FormLogin = () => {
   const { onSubmitLogin } = useContext(UserContext);
@@ -36,47 +35,54 @@ export const FormLogin = () => {
   return (
     <Main>
       <img src="logo"></img>
-    <Container>
-      <form onSubmit={handleSubmit(onSubmitLogin)}>
-      <h1>Faça o seu login:</h1>
-        <input className="inputSlot"
-          {...register("username")}
-          type="text"
-          placeholder="Username"
-        />
-        <p>{errors.username?.message}</p>
-
-        <div className="eye-control">
+      <Container>
+        <form onSubmit={handleSubmit(onSubmitLogin)}>
+          <h1>Faça o seu login:</h1>
           <input
-            {...register("password")}
-            type={isEyeOpen ? "text" : "password"}
-            placeholder="Senha"
+            className="inputSlot"
+            {...register("username")}
+            type="text"
+            placeholder="Username"
           />
-          <button
-            style={{ color: "#ffffff" }}
-            className="eye"
-            onClick={handleEyeState}
-          >
-            <BsFillEyeFill
-              style={{ display: isEyeOpen ? "flex" : "none", color: "#868E96" }}
-            />
-            <BsFillEyeSlashFill
-              style={{ display: isEyeOpen ? "none" : "flex", color: "#868E96" }}
-            />
-          </button>
-        </div>
-        <p>{errors.password?.message}</p>
-        <button className="button-login" type="submit">
-          Entrar
-        </button>
+          <p>{errors.username?.message}</p>
 
-        <Link to="/register">
-          <button className="button-register" type="submit">
-            Não é cadastrado ainda? Clique aqui.
+          <div className="eye-control">
+            <input
+              {...register("password")}
+              type={isEyeOpen ? "text" : "password"}
+              placeholder="Senha"
+            />
+            <button
+              style={{ color: "#ffffff" }}
+              className="eye"
+              onClick={handleEyeState}
+            >
+              <BsFillEyeFill
+                style={{
+                  display: isEyeOpen ? "flex" : "none",
+                  color: "#868E96",
+                }}
+              />
+              <BsFillEyeSlashFill
+                style={{
+                  display: isEyeOpen ? "none" : "flex",
+                  color: "#868E96",
+                }}
+              />
+            </button>
+          </div>
+          <p>{errors.password?.message}</p>
+          <button className="button-login" type="submit">
+            Entrar
           </button>
-        </Link>
-      </form>
-    </Container>
+
+          <Link to="/register">
+            <button className="button-register" type="submit">
+              Não é cadastrado ainda? Clique aqui.
+            </button>
+          </Link>
+        </form>
+      </Container>
     </Main>
   );
 };

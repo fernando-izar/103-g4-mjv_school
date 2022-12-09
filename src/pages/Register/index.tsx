@@ -1,3 +1,10 @@
+import { FormRegister } from "../../components/FormRegister";
+import { Container } from "./style";
+
 export const Register = () => {
-  return <h1>Register</h1>;
+  return (
+    <Container>
+      <FormRegister />
+    </Container>
+  );
 };

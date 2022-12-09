@@ -9,15 +9,15 @@ import { Description } from "../pages/Description";
 const MainRoutes = () => {
   return (
     <Routes>
+      <Route path="/initialPage" element={<InitialPage />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
       <Route element={<ProtectedRoutes />}>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/dashboard/:id" element={<Description />}></Route>
       </Route>
-      <Route path="/initialPage" element={<InitialPage />}></Route>
 
-      <Route path="*" element={<Navigate replace to="/login" />} />
+      <Route path="*" element={<Navigate replace to="/initialPage" />} />
     </Routes>
   );
 };
