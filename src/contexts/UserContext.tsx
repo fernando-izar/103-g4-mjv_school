@@ -39,6 +39,8 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       try {
         const { data } = await api.get<IUser[]>(`users`);
 
+        console.log(data);
+
         setUsers(data);
       } catch (error) {
         console.log(error);
@@ -60,8 +62,6 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
           const { data: responseUserData } = await api.get<IUser>(
             `users/${userId}`
           );
-
-          console.log("loading", loading);
 
           setUser(responseUserData);
         } catch (error) {
@@ -87,6 +87,9 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       const userLogged = users.find((user) => user.username == data.username);
       const userId = userLogged?.id!.toString();
 
+      console.log("users", users);
+      console.log("userId", userId);
+
       localStorage.setItem("@USERID", userId!);
 
       const { data: responseUserData } = await api.get<IUser>(
@@ -109,13 +112,11 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
   };
 
   const onSubmitRegister: SubmitHandler<IUserRequest> = async (data) => {
-    console.log("teste");
     try {
       const { data: responseData } = await api.post<IResponseUserRegister>(
         `users`,
         data
       );
-      console.log(responseData);
       navigate("/login", { replace: true });
       toast.success("Cadastro efetuado com sucesso!");
     } catch (error) {

@@ -30,6 +30,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
     const loadProducts = async () => {
       try {
         const { data } = await api.get(`products?limit=20`);
+        console.log("productsList", productsList);
         setProductsList(data);
       } catch (error) {
         console.log(error);

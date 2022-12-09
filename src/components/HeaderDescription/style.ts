@@ -8,6 +8,7 @@ export const Container = styled.div`
   padding-left: 133px;
   height: 127px;
   width: auto;
+  margin-bottom: 80px;
 
   background: #1e1e1e;
   .search-box {
@@ -22,7 +23,7 @@ export const Container = styled.div`
     }
 
     .search-field {
-      width: 420px;
+      width: 620px;
       height: 40px;
       background-color: #fff;
       border-radius: 5px;
