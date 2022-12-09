@@ -8,6 +8,7 @@ import {
   IUserRequest,
   IResponseUserRegister,
 } from "../interfaces/user.interfaces";
+import { toast } from "react-toastify";
 
 interface IUserProviderProps {
   children: ReactNode;
@@ -95,8 +96,10 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       setUser(responseUserData);
 
       navigate("/dashboard", { replace: true });
+      toast.success("Login efetuado com sucesso!");
     } catch (error) {
       console.log(error);
+      toast.error("Usuário ou senha incorretos");
     }
   };
 
@@ -114,8 +117,10 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       );
       console.log(responseData);
       navigate("/login", { replace: true });
+      toast.success("Cadastro efetuado com sucesso!");
     } catch (error) {
       console.log(error);
+      toast.error("Cadastro não efetuado");
     }
   };
 

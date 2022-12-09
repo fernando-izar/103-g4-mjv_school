@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export const GlobalStyle = createGlobalStyle`
     :root {
         --color-text: #FFFFFF;
@@ -64,4 +63,3 @@ export const GlobalStyle = createGlobalStyle`
 
 
 `;
-
