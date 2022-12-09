@@ -11,7 +11,7 @@ import { Main } from "../../styles/main";
 import { Button } from "../Button";
 import { Container } from "./style";
 
-import { logo } from "../../assets/MjvLogo.svg";
+import logo from "../../assets/MjvLogo.svg";
 
 export const FormLogin = () => {
   const { onSubmitLogin } = useContext(UserContext);
@@ -34,7 +34,7 @@ export const FormLogin = () => {
 
   return (
     <Main>
-      <img src="logo"></img>
+      <img src={logo}></img>
       <Container>
         <form onSubmit={handleSubmit(onSubmitLogin)}>
           <h1>Faça o seu login:</h1>
