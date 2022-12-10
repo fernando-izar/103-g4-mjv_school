@@ -15,7 +15,5 @@ export const formRegisterSchema = yup.object().shape({
   street: yup.string().required("Nome da rua obrigatória"),
   number: yup.number().required("Número obrigatório"),
   zipcode: yup.string().required("CEP obrigatório"),
-  lat: yup.string().required("Latitude obrigatória"),
-  long: yup.string().required("Longitude obrigatória"),
   phone: yup.string().required("Número de telefone/celular obrigatório"),
 });

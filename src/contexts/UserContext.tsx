@@ -113,6 +113,9 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
   const onSubmitRegister: SubmitHandler<IUserRequest> = async (data) => {
     try {
+      console.log("data", data);
+      data.lat = "-23";
+      data.long = "-46";
       const { data: responseData } = await api.post<IResponseUserRegister>(
         `users`,
         data
