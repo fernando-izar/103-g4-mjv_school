@@ -26,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
   body,html{
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     background-color:var(--color-secondary)
   }
 

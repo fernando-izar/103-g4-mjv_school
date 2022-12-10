@@ -9,9 +9,8 @@ export const Container = styled.aside`
     var(--Color-primary-gradient) 172.1%
   );
   width: 15%;
-  height: 100vh;
-  background-color: #1E1E1E;
-  border: 1px solid #1a2534;
+  height: 1080px;
+  background-color: var(--color-primary);
 
 `
 export const SvgLogo = styled.img`

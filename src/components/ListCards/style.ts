@@ -10,7 +10,7 @@ export const Container = styled.div`
     list-style: none;
     gap: 1rem;
     overflow: auto;
-
+    justify-content: center;
     padding: 0 0rem 3rem 1rem;
     margin: 0;
     height: 100%;
