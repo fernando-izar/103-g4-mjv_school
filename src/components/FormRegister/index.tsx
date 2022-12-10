@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formRegisterSchema } from "../../validators/schemas";
 import { IUserRequest } from "../../interfaces/user.interfaces";
+import { Button } from "../Button";
 import { Container } from "./style";
 
 export const FormRegister = () => {
@@ -76,27 +77,21 @@ export const FormRegister = () => {
         <p>{errors.zipcode?.message}</p>
 
         <input
-          {...register("lat")}
-          type="text"
-          placeholder="Latitude da sua residência"
-        />
-        <p>{errors.lat?.message}</p>
-
-        <input
-          {...register("long")}
-          type="text"
-          placeholder="Longitude da sua residência"
-        />
-        <p>{errors.long?.message}</p>
-
-        <input
           {...register("phone")}
           type="text"
           placeholder="Seu telefone/celular"
         />
         <p>{errors.phone?.message}</p>
 
-        <button className="button-register" type="submit">Cadastrar</button>
+        <button className="button-register" type="submit">
+          Cadastrar
+        </button>
+        <Button
+          label="Login"
+          className="button"
+          BackgroundColor="var(--color-primary-gradient)"
+          linkTo="/login"
+        ></Button>
       </form>
     </Container>
   );
