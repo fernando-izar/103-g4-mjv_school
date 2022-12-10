@@ -17,7 +17,7 @@ export const AsideDashboard = () => {
           color: category == "all" ? "white" : "buttontext",
         }}
       >
-        Todo os produtos
+        Todos os produtos
       </button>
 
       <button

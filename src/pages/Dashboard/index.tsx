@@ -11,18 +11,16 @@ import ContainerMark from "../../assets/ContainerMarketingMjv.png";
 export const Dashboard = () => {
   const { user } = useContext(UserContext);
 
-  return user ? (
+  return (
     <Container>
       <AsideDashboard />
       <div className="main-content">
         <HeaderDashboard />
         <img className="marketingContainer" src={ContainerMark}></img>
 
-        <h2>Olá, {user.name.firstname}!</h2>
+        <h2>Olá, {user!.name.firstname}!</h2>
         <ListCards />
       </div>
     </Container>
-  ) : (
-    <Navigate to={`/`} replace />
   );
 };

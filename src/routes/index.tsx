@@ -6,7 +6,7 @@ import { Dashboard } from "../pages/Dashboard";
 import { InitialPage } from "../pages/InitialPage";
 import { Description } from "../pages/Description";
 import { ListCards } from "../components/ListCards";
-import { ShoppingCart } from "../pages/ShoppingCart";
+import { ShoppingCartsDashboard } from "../pages/ShoppingCartsDashboard";
 
 const MainRoutes = () => {
   return (
@@ -17,7 +17,10 @@ const MainRoutes = () => {
       <Route element={<ProtectedRoutes />}>
         <Route path="/dashboard/:id" element={<Description />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
-        <Route path="/shoppingcart" element={<ShoppingCart />}></Route>
+        <Route
+          path="/shoppingcart"
+          element={<ShoppingCartsDashboard />}
+        ></Route>
       </Route>
 
       <Route path="*" element={<Navigate replace to="/initialPage" />} />
