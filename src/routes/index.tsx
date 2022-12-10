@@ -5,6 +5,7 @@ import { Register } from "../pages/Register";
 import { Dashboard } from "../pages/Dashboard";
 import { InitialPage } from "../pages/InitialPage";
 import { Description } from "../pages/Description";
+import { ListCards } from "../components/ListCards";
 
 const MainRoutes = () => {
   return (
@@ -13,8 +14,10 @@ const MainRoutes = () => {
       <Route path="/login" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
       <Route element={<ProtectedRoutes />}>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/dashboard/:id" element={<Description />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path=":category" element={<ListCards />} />
+        </Route>
       </Route>
 
       <Route path="*" element={<Navigate replace to="/initialPage" />} />

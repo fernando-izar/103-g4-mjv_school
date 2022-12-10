@@ -5,6 +5,8 @@ import { Container } from "./style";
 import { ListCards } from "../../components/ListCards";
 import { HeaderDashboard } from "../../components/HeaderDashboard";
 import { AsideDashboard } from "../../components/AsideDashboard";
+import { Outlet } from "react-router-dom";
+
 export const Dashboard = () => {
   const { user } = useContext(UserContext);
   return user ? (

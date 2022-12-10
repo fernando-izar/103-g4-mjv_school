@@ -20,6 +20,8 @@ interface IProductProviderData {
   setNewSearch: React.Dispatch<React.SetStateAction<string>>;
   searched: string;
   setSearched: React.Dispatch<React.SetStateAction<string>>;
+  category: string;
+  setCategory: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const ProductContext = createContext<IProductProviderData>(
@@ -31,6 +33,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [newSearch, setNewSearch] = useState("");
   const [searched, setSearched] = useState("");
+  const [category, setCategory] = useState("");
 
   useEffect(() => {
     const loadProducts = async () => {
