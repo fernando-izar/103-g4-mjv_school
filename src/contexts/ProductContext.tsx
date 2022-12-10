@@ -20,6 +20,8 @@ interface IProductProviderData {
   setNewSearch: React.Dispatch<React.SetStateAction<string>>;
   searched: string;
   setSearched: React.Dispatch<React.SetStateAction<string>>;
+  category: string;
+  setCategory: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const ProductContext = createContext<IProductProviderData>(
@@ -31,6 +33,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [newSearch, setNewSearch] = useState("");
   const [searched, setSearched] = useState("");
+  const [category, setCategory] = useState("all");
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -43,8 +46,34 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
       }
       setLoadingProducts(false);
     };
-    loadProducts();
-  }, [loadingProducts]);
+
+    const LoadProductsByCategory = async () => {
+      try {
+        const { data } = await api.get<IProducts[]>(
+          `products/category/${category}`
+        );
+        console.log("productsList", productsList);
+        setProductsList(data);
+      } catch (error) {
+        console.log(error);
+      }
+      setLoadingProducts(false);
+    };
+
+    console.log(category);
+    if (category == "all") {
+      loadProducts();
+    }
+
+    if (
+      category == "electronics" ||
+      category == "jewelery" ||
+      category == "men's clothing" ||
+      category == "women's clothing"
+    ) {
+      LoadProductsByCategory();
+    }
+  }, [loadingProducts, category]);
 
   useEffect(() => {
     const token = localStorage.getItem("@TOKEN");
@@ -87,6 +116,8 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         setNewSearch,
         searched,
         setSearched,
+        category,
+        setCategory,
       }}
     >
       {children}
