@@ -5,13 +5,12 @@ import { Container } from "./style";
 import { ListCards } from "../../components/ListCards";
 import { HeaderDashboard } from "../../components/HeaderDashboard";
 import { AsideDashboard } from "../../components/AsideDashboard";
-import ContainerMark from "../../assets/ContainerMarketingMjv.png"
-
+import { Outlet } from "react-router-dom";
+import ContainerMark from "../../assets/ContainerMarketingMjv.png";
 
 export const Dashboard = () => {
   const { user } = useContext(UserContext);
 
-  
   return user ? (
     <Container>
       <AsideDashboard></AsideDashboard>
