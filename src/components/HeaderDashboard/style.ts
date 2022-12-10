@@ -9,7 +9,7 @@ export const Container = styled.div`
   height: 127px;
   width: auto;
 
-  background: #1e1e1e;
+  background: var(--color-primary);
   .search-box {
     position: relative;
     display: flex;
@@ -47,6 +47,6 @@ export const Container = styled.div`
     height: 30px;
     width: 50px;
     font-family: "Poppins";
-    margin-right: 10px;
+    margin-right: 2%;
   }
 `;
