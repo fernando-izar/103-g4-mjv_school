@@ -8,6 +8,7 @@ import { IProducts } from "../../interfaces/products.interfaces";
 import { HeaderDashboard } from "../../components/HeaderDashboard";
 import { HeaderDescription } from "../../components/HeaderDescription";
 import { AsideDashboard } from "../../components/AsideDashboard";
+import { AsideDescription } from "../../components/AsideDescription";
 import { Button } from "../../components/Button";
 
 export const Description = () => {
@@ -48,7 +49,7 @@ export const Description = () => {
 
   return (
     <Container>
-      <AsideDashboard></AsideDashboard>
+      <AsideDescription />
 
       <div className="main-content">
         <HeaderDescription />

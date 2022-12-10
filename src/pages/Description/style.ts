@@ -53,7 +53,7 @@ export const Container = styled.div`
     border: solid 1px #d9d9d9;
     border-radius: 5px;
   }
-  img {
+  .bodyContainer .descriptionContainer .cardProduct .imageContainer img {
     width: 90%;
     :nth-child(even) {
       margin-top: -2px;
