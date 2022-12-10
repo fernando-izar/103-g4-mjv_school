@@ -1,18 +1,15 @@
-import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
 import { Container } from "./style";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { Link } from "react-router-dom";
 
-export const HeaderDescription = () => {
+export const HeaderShoppingCart = () => {
   const { logout } = useContext(UserContext);
 
   return (
     <Container>
       <div className="search-box"></div>
-      <Link to={`/shoppingcart`}>
-        <AiOutlineShoppingCart color="white" size={25} cursor={"pointer"} />
-      </Link>
       <button className="button-logout" onClick={logout}>
         Sair
       </button>

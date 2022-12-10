@@ -13,7 +13,7 @@ export const Dashboard = () => {
 
   return user ? (
     <Container>
-      <AsideDashboard></AsideDashboard>
+      <AsideDashboard />
       <div className="main-content">
         <HeaderDashboard />
         <img className="marketingContainer" src={ContainerMark}></img>
