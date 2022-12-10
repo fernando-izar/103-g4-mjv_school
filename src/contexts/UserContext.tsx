@@ -20,6 +20,7 @@ interface IUserProviderData {
   onSubmitLogin: SubmitHandler<IUserLogin>;
   onSubmitRegister: SubmitHandler<IUserRequest>;
   user: IUser | null;
+  users: IUser[];
   logout: () => void;
 }
 
@@ -136,6 +137,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
         onSubmitLogin,
         onSubmitRegister,
         user,
+        users,
         logout,
       }}
     >

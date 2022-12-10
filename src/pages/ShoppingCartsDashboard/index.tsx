@@ -4,6 +4,7 @@ import { IShoppingCart } from "../../interfaces/shoppingcart.interfaces";
 import { AsideDescription } from "../../components/AsideDescription";
 import { HeaderDescription } from "../../components/HeaderDescription";
 import { Link } from "react-router-dom";
+import { ListShoppingCarts } from "../../components/ListShoppingCarts";
 
 export const ShoppingCartsDashboard = () => {
   const [shoppingCartList, setShoppingCartList] = useState<IShoppingCart[]>([]);
@@ -17,8 +18,7 @@ export const ShoppingCartsDashboard = () => {
           Voltar
         </Link>
 
-        {/* <h2>Olá, {user!.name.firstname}!</h2> */}
-        {/* <ListCards /> */}
+        <ListShoppingCarts />
       </div>
     </Container>
   );
