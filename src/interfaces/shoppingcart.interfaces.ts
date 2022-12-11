@@ -14,4 +14,5 @@ export interface IShoppingCartProduct {
 export interface IShoppingCartToRender {
   userName: string;
   products: IShoppingCartProduct[];
+  date: string;
 }

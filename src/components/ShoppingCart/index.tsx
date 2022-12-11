@@ -2,12 +2,17 @@ import { Container } from "./style";
 import { IShoppingCartToRender } from "../../interfaces/shoppingcart.interfaces";
 import { useContext } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
-export const ShoppingCart = ({ userName, products }: IShoppingCartToRender) => {
+export const ShoppingCart = ({
+  userName,
+  products,
+  date,
+}: IShoppingCartToRender) => {
   const { productsList } = useContext(ProductContext);
 
   return (
     <Container>
-      <div className="username">{userName}</div>
+      {/* <div className="username">{userName}</div> */}
+      <div className="date">{date}</div>
       <ul className="ul-products">
         {products.map((element) => {
           const product = productsList.filter(

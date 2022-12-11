@@ -12,20 +12,26 @@ export const ListShoppingCarts = () => {
     <Container>
       <ul className="carts">
         {userCarts.map((element) => {
-          console.log("users", users);
           const name = users.filter((item) => {
             return item.id == element.userId;
           });
 
-          // console.log("users", users);
-          // console.log("element.userId", element.userId);
-          console.log("name", name);
+          const date = new Date(element.date);
+          const day = date.getDay();
+          const month = date.getMonth();
+          const year = date.getFullYear();
+          const hour = date.getHours();
+          const minutes = date.getMinutes();
+          const seconds = date.getSeconds();
+
+          console.log(day, month, year, hour, minutes, seconds);
 
           return (
             <ShoppingCart
               key={element.id}
               userName={`Cliente: ${name[0].name.firstname} ${name[0].name.lastname}`}
               products={element.products}
+              date={`Compras efetuadas em ${day}/${month}/${year} às ${hour}:${minutes}:${seconds}`}
             />
           );
         })}
