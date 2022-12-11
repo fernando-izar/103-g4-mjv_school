@@ -2,7 +2,6 @@ import { Container } from "./style";
 import { IShoppingCartToRender } from "../../interfaces/shoppingcart.interfaces";
 import { useContext } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
-
 export const ShoppingCart = ({ userName, products }: IShoppingCartToRender) => {
   const { productsList } = useContext(ProductContext);
 

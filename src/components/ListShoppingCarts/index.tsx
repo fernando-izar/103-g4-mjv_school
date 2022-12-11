@@ -5,13 +5,13 @@ import { ShoppingCart } from "../ShoppingCart";
 import { Container } from "./style";
 
 export const ListShoppingCarts = () => {
-  const { users } = useContext(UserContext);
-  const { productsList, listShoppingCarts } = useContext(ProductContext);
+  const { users, userCarts } = useContext(UserContext);
+  const { productsList } = useContext(ProductContext);
 
   return (
     <Container>
       <ul className="carts">
-        {listShoppingCarts.map((element) => {
+        {userCarts.map((element) => {
           console.log("users", users);
           const name = users.filter((item) => {
             return item.id == element.userId;
