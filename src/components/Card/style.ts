@@ -6,9 +6,16 @@ export const Container = styled.li`
   height: 400px;
   perspective: 1000px;
   margin-top: 30px;
-
-
-
+  font-family: 'Poppins';
+  
+  .title-product-text-container{
+    margin-top: 15px;
+    text-align: start;
+    width: 98%;
+  }
+  h2{
+    font-weight: 600;
+  }
 
   .flip-card-inner {
     position: relative;
@@ -28,7 +35,6 @@ export const Container = styled.li`
 
   :hover .flip-card-inner {
     transform: rotateY(180deg);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
     transition: 1s;
   }
 
@@ -86,16 +92,82 @@ export const Container = styled.li`
     /* background-color: #bdf1ea; */
     /*  color: black; */
     transform: rotateY(180deg);
-
+    color: var(--color-primary);
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
+    text-align: start;
     gap: 1rem;
+    padding: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    .flip-card-back-category{
+      color: var(--action-primary);
+      font-size: 13px;
+      font-weight:600
+    }
+    .flip-card-back-title{
+      font-size: 16px;
+      font-weight:600
+    }
+    .flip-card-back-price{
+      font-size: 22px;
+    }
+    .flip-card-back-rate{
+      font-size: 13px;
+    }
+    .back-text-container{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .descriptinContainer{
+      text-align: start;
+      border-bottom-style: solid;
+      width: 100%;
+    }
+    .description-text{
+      font-weight: 500;
+      
+      font-size: 15px;
+      left: 25px;
+    }
+    .flip-card-back-count{
+      font-size: 13px;
+    }
+    .flip-card-back-description{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 8;
+      font-size: 12px;
+      font-weight: 400;
+      overflow: hidden;
+      text-align: left;
 
-    button {
-      margin-left: 20px;
-      margin-right: 20px;
-      margin-bottom: 19px;
+
+    }
+    .link-Container{
+      width: 100%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .buttonSeller {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      color: var(--color-text);
+      background-color: var(--action-primary);
+      border-radius: 16px;
+      
+
     }
   }
 `;

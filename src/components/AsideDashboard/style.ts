@@ -14,6 +14,8 @@ export const Container = styled.aside`
   width: 15%;
   height: 1080px;
   background-color: var(--color-primary);
+  font-family: 'Poppins';
+
 
   button {
     height: 50px;
