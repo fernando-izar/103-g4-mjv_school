@@ -12,12 +12,19 @@ export const ListShoppingCarts = () => {
     <Container>
       <ul className="carts">
         {listShoppingCarts.map((element) => {
-          const name = users.filter((user) => (user.id = element.userId));
+          console.log("users", users);
+          const name = users.filter((item) => {
+            return item.id == element.userId;
+          });
+
+          // console.log("users", users);
+          // console.log("element.userId", element.userId);
+          console.log("name", name);
 
           return (
             <ShoppingCart
               key={element.id}
-              userName={`Cliente: ${name[0].name.firstname} ${name[1].name.lastname}`}
+              userName={`Cliente: ${name[0].name.firstname} ${name[0].name.lastname}`}
               products={element.products}
             />
           );

@@ -40,7 +40,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       try {
         const { data } = await api.get<IUser[]>(`users`);
 
-        console.log(data);
+        console.log("users", data);
 
         setUsers(data);
       } catch (error) {
