@@ -24,8 +24,6 @@ export const ListShoppingCarts = () => {
           const minutes = date.getMinutes();
           const seconds = date.getSeconds();
 
-          console.log(day, month, year, hour, minutes, seconds);
-
           return (
             <ShoppingCart
               key={element.id}
