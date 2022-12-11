@@ -4,6 +4,7 @@ import { api } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { SubmitHandler } from "react-hook-form";
 import { IResponseUserLogin, IUserLogin } from "../interfaces/login.interfaces";
+import { IShoppingCart } from "../interfaces/shoppingcart.interfaces";
 import {
   IUserRequest,
   IResponseUserRegister,
@@ -20,7 +21,10 @@ interface IUserProviderData {
   onSubmitLogin: SubmitHandler<IUserLogin>;
   onSubmitRegister: SubmitHandler<IUserRequest>;
   user: IUser | null;
+  users: IUser[];
   logout: () => void;
+  userCarts: IShoppingCart[];
+  setUserCarts: React.Dispatch<React.SetStateAction<IShoppingCart[]>>;
 }
 
 export const UserContext = createContext<IUserProviderData>(
@@ -31,6 +35,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
   const [user, setUser] = useState<IUser | null>(null);
   const [users, setUsers] = useState<IUser[]>([]);
   const [loading, setLoading] = useState(true);
+  const [userCarts, setUserCarts] = useState<IShoppingCart[]>([]);
 
   const navigate = useNavigate();
 
@@ -39,7 +44,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
       try {
         const { data } = await api.get<IUser[]>(`users`);
 
-        console.log(data);
+        console.log("users", data);
 
         setUsers(data);
       } catch (error) {
@@ -96,7 +101,13 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
         `users/${userId}`
       );
 
+      const { data: responseUserCartsData } = await api.get<IShoppingCart[]>(
+        `carts/user/${userId}`
+      );
+
       setUser(responseUserData);
+
+      setUserCarts(responseUserCartsData);
 
       navigate("/dashboard", { replace: true });
       toast.success("Login efetuado com sucesso!");
@@ -136,7 +147,10 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
         onSubmitLogin,
         onSubmitRegister,
         user,
+        users,
         logout,
+        userCarts,
+        setUserCarts,
       }}
     >
       {children}

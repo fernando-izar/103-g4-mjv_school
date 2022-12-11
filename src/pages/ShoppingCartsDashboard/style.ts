@@ -10,6 +10,19 @@ export const Container = styled.div`
     width: 85%;
     height: 63vh;
 
+    .back-to-dashboard {
+      width: 115px;
+      height: 25px;
+      background: #000000;
+      padding: 10px;
+      text-align: center;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      line-height: 25px;
+      margin-left: 5px;
+    }
+
     .marketingContainer {
       width: 99%;
     }

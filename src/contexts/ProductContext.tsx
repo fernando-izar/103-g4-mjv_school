@@ -8,6 +8,7 @@ import {
 import { UserContext } from "./UserContext";
 import { api } from "../services/api";
 import { IProducts } from "../interfaces/products.interfaces";
+import { IShoppingCart } from "../interfaces/shoppingcart.interfaces";
 
 interface IProductProviderProps {
   children: ReactNode;
@@ -22,6 +23,8 @@ interface IProductProviderData {
   setSearched: React.Dispatch<React.SetStateAction<string>>;
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;
+  // listShoppingCarts: IShoppingCart[];
+  // setListShoppingCarts: React.Dispatch<React.SetStateAction<IShoppingCart[]>>;
 }
 
 export const ProductContext = createContext<IProductProviderData>(
@@ -34,12 +37,16 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
   const [newSearch, setNewSearch] = useState("");
   const [searched, setSearched] = useState("");
   const [category, setCategory] = useState("all");
+  // const [listShoppingCarts, setListShoppingCarts] = useState<IShoppingCart[]>(
+  //   []
+  // );
 
   useEffect(() => {
     const loadProducts = async () => {
       try {
         const { data } = await api.get<IProducts[]>(`products`);
         console.log("productsList", productsList);
+
         setProductsList(data);
       } catch (error) {
         console.log(error);
@@ -107,6 +114,21 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
     }
   }, [searched]);
 
+  // useEffect(() => {
+  //   const loadShoppingCarts = async () => {
+
+  //     try {
+  //       const { data } = await api.get<IShoppingCart[]>(`carts?limit=5`);
+  //       console.log("list shopping carts", data);
+  //       setListShoppingCarts(data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+
+  //   loadShoppingCarts();
+  // }, []);
+
   return (
     <ProductContext.Provider
       value={{
@@ -118,6 +140,8 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         setSearched,
         category,
         setCategory,
+        // listShoppingCarts,
+        // setListShoppingCarts,
       }}
     >
       {children}
