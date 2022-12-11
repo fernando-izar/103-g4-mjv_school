@@ -3,6 +3,8 @@ import { BackgroundColor } from "./style";
 import { ContainerItens } from "./style";
 import { ContainerText } from "./style";
 import { Containerbutton } from "./style";
+import { Main } from "../../styles/main";
+
 
 import { Button } from "../../components/Button";
 import mjvLogo from "../../assets/mjvLogo.svg";
@@ -10,7 +12,7 @@ import SplashImage from "../../assets/SplashImage.png";
 
 export const InitialPage = () => {
   return (
-    <BackgroundColor>
+    <Main>
       <MainContainer>
         <img src={mjvLogo} alt="MjvLogo" className="Logo" />
         <ContainerItens>
@@ -43,6 +45,6 @@ export const InitialPage = () => {
           ></Button>
         </Containerbutton>
       </MainContainer>
-    </BackgroundColor>
+    </Main>
   );
 };
