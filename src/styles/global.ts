@@ -6,7 +6,8 @@ export const GlobalStyle = createGlobalStyle`
         --color-backgrond: #ebebeb;
         --color-primary: #111111;
         --color-secondary: #FEF1E9;
-        --color-primary-gradient: #102542
+        --color-primary-gradient: #102542;
+        --action-primary: #8600bb;
     }
     
     @media (min-width: 700px) {
