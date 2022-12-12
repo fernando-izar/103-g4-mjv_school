@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { IProducts } from "../../interfaces/products.interfaces";
 
-import  MJVLoad  from "../../assets/MJVLoad.gif" 
+import  MJVLoad  from "../../assets/MJVLoad.webp" 
 
 import { HeaderDashboard } from "../../components/HeaderDashboard";
 import { HeaderDescription } from "../../components/HeaderDescription";

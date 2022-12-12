@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 
 export const Containerbutton = styled(Link)`
     
-    height: 50px;
+    height: 75px;
 
-    width: 10vmax;
+    width: 100%;
 
     padding-left: 10%;
     padding-right: 10%;
@@ -15,13 +15,16 @@ export const Containerbutton = styled(Link)`
     justify-content: center;
     justify-content: center;
 
-    border-radius: 6px;
+    margin-top:20px;
+
+    border-radius: 2px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     
-    color: var(--color-text);
+    color: black;
+    font-weight: 600;
     font-family: 'Poppins';
-
-
+    font-size: 13px;
+    text-align: center;
     
 `
 ;
