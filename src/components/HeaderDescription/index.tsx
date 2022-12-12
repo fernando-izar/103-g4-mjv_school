@@ -11,7 +11,7 @@ export const HeaderDescription = () => {
     <Container>
       <div className="search-box"></div>
       <Link to={`/shoppingcart`}>
-        <AiOutlineShoppingCart color="white" size={25} cursor={"pointer"} />
+        <AiOutlineShoppingCart color="8600bb" size={25} cursor={"pointer"} />
       </Link>
       <button className="button-logout" onClick={logout}>
         Sair

@@ -11,7 +11,7 @@ export const Container = styled.div`
   margin-bottom: 80px;
   gap: 20px;
 
-  background: #1e1e1e;
+  background: var(--color-primary);
   .search-box {
     position: relative;
     display: flex;

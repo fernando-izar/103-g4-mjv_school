@@ -18,18 +18,13 @@ export const MainContainer = styled.div`
   display: flex;
   width: 88%;
   height: 88%;
-  background: rgba(33, 16, 28, 0.33);
-
+  background: var(--color-primary);
   border-radius: 15px;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   padding: 25px;
 
-  img {
-    width: 10%;
-    height: fit-content;
-    margin-bottom: 25px;
-  }
 `;
 
 export const ContainerItens = styled.div`
@@ -44,19 +39,27 @@ export const ContainerItens = styled.div`
 `;
 export const Containerbutton = styled.div`
   display: flex;
-  width: 25%;
+  width: 350px;
+  justify-content: space-between;
   flex-direction: row;
 `;
 
 export const ContainerText = styled.div`
   display: flex;
   flex-direction: column;
-
+  text-align: center;
+  
   h1,
   h2,
   h3 {
+    font-size: 25px;
     margin-bottom: 20px;
     color: var(--color-text);
     font-weight: normal;
   }
+  h1{
+    font-size: 30px;
+    font-weight: 600;
+  }
+
 `;

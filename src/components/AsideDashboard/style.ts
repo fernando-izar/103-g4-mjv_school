@@ -15,18 +15,40 @@ export const Container = styled.aside`
   height: 1080px;
   background-color: var(--color-primary);
   font-family: 'Poppins';
-
+  
+  .containerButton{
+    display: flex;
+    margin-top: 25px;
+    flex-direction: column;
+    height: 500px;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 
   button {
     height: 50px;
+    color: white;
+    border:none;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px
+    
+  }
+
+  
+
+
+  .svgContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
   }
 `;
 
+
 export const SvgLogo = styled.img`
-  margin-top: 50px;
-  margin: 25px;
+ 
   width: 50%;
-  height: 155px;
-  filter: invert(99%) sepia(87%) saturate(2%) hue-rotate(34deg) brightness(111%)
-    contrast(100%);
 `;

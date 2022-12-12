@@ -2,18 +2,23 @@ import { useContext } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
 import { Container } from "./style";
 import { SvgLogo } from "./style";
-import logo from "../../assets/MjvLogo.svg";
+import logo from "../../assets/MjvColor.svg";
 
 export const AsideDashboard = () => {
   const { category, setCategory } = useContext(ProductContext);
 
   return (
     <Container>
-      <SvgLogo className="logo-img" src={logo} alt="logo" />
+      <div className="svgContainer">
+        <SvgLogo className="logo-img" src={logo} alt="logo" />
+
+      </div>
+
+      <div className="containerButton">
       <button
         onClick={() => setCategory("all")}
         style={{
-          backgroundColor: category == "all" ? "gray" : "buttonface",
+          backgroundColor: category == "all" ? "var(--action-primary)" : "buttonface",
           color: category == "all" ? "white" : "buttontext",
         }}
       >
@@ -23,7 +28,7 @@ export const AsideDashboard = () => {
       <button
         onClick={() => setCategory("electronics")}
         style={{
-          backgroundColor: category == "electronics" ? "gray" : "buttonface",
+          backgroundColor: category == "electronics" ? "var(--action-primary)" : "buttonface",
           color: category == "electronics" ? "white" : "buttontext",
         }}
       >
@@ -32,7 +37,7 @@ export const AsideDashboard = () => {
       <button
         onClick={() => setCategory("jewelery")}
         style={{
-          backgroundColor: category == "jewelery" ? "gray" : "buttonface",
+          backgroundColor: category == "jewelery" ? "var(--action-primary)" : "buttonface",
           color: category == "jewelery" ? "white" : "buttontext",
         }}
       >
@@ -43,7 +48,7 @@ export const AsideDashboard = () => {
         onClick={() => setCategory("women's clothing")}
         style={{
           backgroundColor:
-            category == "women's clothing" ? "gray" : "buttonface",
+            category == "women's clothing" ? "var(--action-primary)" : "buttonface",
           color: category == "women's clothing" ? "white" : "buttontext",
         }}
       >
@@ -52,12 +57,14 @@ export const AsideDashboard = () => {
       <button
         onClick={() => setCategory("men's clothing")}
         style={{
-          backgroundColor: category == "men's clothing" ? "gray" : "buttonface",
+          backgroundColor: category == "men's clothing" ? "var(--action-primary)" : "buttonface",
           color: category == "men's clothing" ? "white" : "buttontext",
         }}
       >
         Roupa Masculina
       </button>
+      </div>
+      
     </Container>
   );
 };
