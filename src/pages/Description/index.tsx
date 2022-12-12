@@ -5,11 +5,14 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { IProducts } from "../../interfaces/products.interfaces";
 
+import MJVLoad from "../../assets/MJVLoad.gif";
+
 import { HeaderDashboard } from "../../components/HeaderDashboard";
 import { HeaderDescription } from "../../components/HeaderDescription";
 import { AsideDashboard } from "../../components/AsideDashboard";
 import { AsideDescription } from "../../components/AsideDescription";
 import { Button } from "../../components/Button";
+import { Main } from "../../styles/main";
 
 export const Description = () => {
   const { id } = useParams();
@@ -30,20 +33,35 @@ export const Description = () => {
   }, [id]);
 
   if (loadingProduct) {
-    return <Container>Loading</Container>;
+    return (
+      <Container>
+        <AsideDescription />
+
+        <div className="main-content">
+          <HeaderDescription />
+
+          <div className="loadContainer">
+            <img src={MJVLoad} alt="" />
+          </div>
+          <div className="bodyContainer"></div>
+        </div>
+      </Container>
+    );
   }
 
   if (!product) {
     return (
-      <Container>
-        <div className="product-not-found">
-          <p className="product-not-found-paragraph">Product not found</p>
+      <Main>
+        <Container>
+          <div className="product-not-found">
+            <p className="product-not-found-paragraph">Product not found</p>
 
-          <Link className="product-not-found-link" to="/dashboard">
-            Voltar
-          </Link>
-        </div>
-      </Container>
+            <Link className="product-not-found-link" to="/dashboard">
+              Voltar
+            </Link>
+          </div>
+        </Container>
+      </Main>
     );
   }
 
@@ -68,15 +86,13 @@ export const Description = () => {
             </div>
 
             <ol className="textContainer">
-              <h2>{product.title}</h2>
+              <h1>{product.title}</h1>
               <hr></hr>
-              <div>Rate: {product.rating.rate}</div>
+              <h3>Rate: {product.rating.rate}</h3>
               <hr></hr>
-              <p>{product.description}</p>
+              <h2>{product.description}</h2>
               <br></br>
-              <p>{product.description}</p>
-              <br></br>
-              <p>{product.description}</p>
+              <h2>{product.description}</h2>
             </ol>
 
             <div className="buyContainer">
@@ -86,12 +102,12 @@ export const Description = () => {
                 <h4>Quantidade restante: {product.rating.count}</h4>
                 <h4> Valor: ${product.price}</h4>
                 <div className="buttonContainer">
-                  <Button
+                  {/* <Button
                     label="COMPRAR AGORA"
                     className="button"
-                    BackgroundColor="black"
+                    BackgroundColor="var(--action-primary)"
                     linkTo="/Dashboard"
-                  ></Button>
+                  ></Button> */}
                   <Button
                     label="COLOCAR NO CARRINHO"
                     className="button"

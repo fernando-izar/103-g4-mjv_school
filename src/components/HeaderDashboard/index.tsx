@@ -1,8 +1,9 @@
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { Container } from "./style";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { ProductContext } from "../../contexts/ProductContext";
+import { Link } from "react-router-dom";
 
 export const HeaderDashboard = () => {
   const { logout } = useContext(UserContext);
@@ -44,6 +45,9 @@ export const HeaderDashboard = () => {
           </button>
         </form>
       </div>
+      <Link to={`/shoppingcart`}>
+        <AiOutlineShoppingCart color="8600bb" size={25} cursor={"pointer"} />
+      </Link>
       <button className="button-logout" onClick={logout}>
         Sair
       </button>

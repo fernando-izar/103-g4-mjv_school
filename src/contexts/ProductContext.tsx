@@ -8,6 +8,7 @@ import {
 import { UserContext } from "./UserContext";
 import { api } from "../services/api";
 import { IProducts } from "../interfaces/products.interfaces";
+import { IShoppingCart } from "../interfaces/shoppingcart.interfaces";
 
 interface IProductProviderProps {
   children: ReactNode;
@@ -39,7 +40,9 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
     const loadProducts = async () => {
       try {
         const { data } = await api.get<IProducts[]>(`products`);
-        console.log("productsList", productsList);
+
+        console.log("get->products", data);
+
         setProductsList(data);
       } catch (error) {
         console.log(error);
@@ -52,7 +55,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         const { data } = await api.get<IProducts[]>(
           `products/category/${category}`
         );
-        console.log("productsList", productsList);
+        console.log("get->products/category/:category", data);
         setProductsList(data);
       } catch (error) {
         console.log(error);
@@ -60,7 +63,6 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
       setLoadingProducts(false);
     };
 
-    console.log(category);
     if (category == "all") {
       loadProducts();
     }
@@ -82,6 +84,8 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
       try {
         const { data } = await api.get<IProducts[]>(`products`);
 
+        console.log("get->products", data);
+
         const filtered = data.filter(
           (element) =>
             element.category
@@ -102,7 +106,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         console.log(error);
       }
     };
-    if (token) {
+    if (token && searched.length) {
       renderSearch();
     }
   }, [searched]);

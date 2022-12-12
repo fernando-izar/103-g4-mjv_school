@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   background-color: #ebebeb;
-
+  font-family: 'Poppins';
   .product-not-found {
     display: flex;
     font-size: 100px;
@@ -23,14 +23,13 @@ export const Container = styled.div`
     .product-not-found-link {
       width: 115px;
       height: 25px;
-      background: #000000;
+      background: var(--action-primary);
       padding: 10px;
       text-align: center;
       border-radius: 5px;
       color: white;
-      font-weight: bold;
       line-height: 25px;
-      margin-left: 5px;
+      margin-left: 20px;
     }
   }
   .bodyContainer .descriptionContainer {
@@ -118,8 +117,30 @@ export const Container = styled.div`
       align-items: center;
     }
   }
-
+  .loadContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+      
+      width: 100px;
+      height: 100px;
+    }
+  }
+  h1{
+    font-size: 35px;
+  }
+  h2{
+    font-size: 20px;
+    font-weight: 300;
+  }
+  h3{
+    font-size: 15px;
+  }
   h4 {
-    font-weight: 40;
+    font-size: 12px;
+    font-weight: 400;
   }
 `;

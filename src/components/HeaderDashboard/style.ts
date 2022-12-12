@@ -8,6 +8,7 @@ export const Container = styled.div`
   padding-left: 133px;
   height: 127px;
   width: auto;
+  gap: 20px;
 
   background: var(--color-primary);
   .search-box {

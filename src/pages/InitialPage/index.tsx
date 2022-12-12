@@ -3,30 +3,31 @@ import { BackgroundColor } from "./style";
 import { ContainerItens } from "./style";
 import { ContainerText } from "./style";
 import { Containerbutton } from "./style";
+import { Main } from "../../styles/main";
+
 
 import { Button } from "../../components/Button";
-import mjvLogo from "../../assets/mjvLogo.svg";
-import SplashImage from "../../assets/SplashImage.png";
+import mjvLogo from "../../assets/MjvColor.svg";
 
 export const InitialPage = () => {
   return (
-    <BackgroundColor>
+    <Main>
       <MainContainer>
         <img src={mjvLogo} alt="MjvLogo" className="Logo" />
         <ContainerItens>
           <ContainerText>
             <h1>MJV E-Commerce Market</h1>
             <h2>
-              Aqui você encontra diversas opções de itens de <br></br>{" "}
-              joalheria, hardware, roupas... Aproveite!
+              Transformando sua experiencia em compras de<br></br>{" "}
+              joalheria, hardware, roupas
             </h2>
             <h3>
-              “A promoções da Black Friday estão chegando!<br></br> Economize
-              aqui em nosso site!<br></br> Não venha conhecer nossos produtos
-              somente se não <br></br> quiser economizar dinheiro!”
+              Somos ágeis na nossa entrega!<br></br>
+              <br></br> 
+              Não venha conhecer nossos produtos
+              somente se não <br></br> quiser economizar
             </h3>
           </ContainerText>
-          <img src={SplashImage} alt="MjvLogo" />
         </ContainerItens>
 
         <Containerbutton>
@@ -43,6 +44,6 @@ export const InitialPage = () => {
           ></Button>
         </Containerbutton>
       </MainContainer>
-    </BackgroundColor>
+    </Main>
   );
 };
