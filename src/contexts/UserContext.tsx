@@ -70,6 +70,14 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
           console.log("get->users/:id", responseUserData);
 
           setUser(responseUserData);
+
+          const { data: responseUserCartsData } = await api.get<
+            IShoppingCart[]
+          >(`carts/user/${userId}`);
+
+          console.log("get->carts/user/:id", responseUserCartsData);
+
+          setUserCarts(responseUserCartsData);
         } catch (error) {
           console.log(error);
         }
@@ -128,13 +136,15 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
   const onSubmitRegister: SubmitHandler<IUserRequest> = async (data) => {
     try {
-      console.log("data", data);
       data.lat = "-23";
       data.long = "-46";
       const { data: responseData } = await api.post<IResponseUserRegister>(
         `users`,
         data
       );
+
+      console.log("post->users", responseData);
+
       navigate("/login", { replace: true });
       toast.success("Cadastro efetuado com sucesso!");
     } catch (error) {

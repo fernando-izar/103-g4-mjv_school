@@ -23,8 +23,6 @@ interface IProductProviderData {
   setSearched: React.Dispatch<React.SetStateAction<string>>;
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;
-  // listShoppingCarts: IShoppingCart[];
-  // setListShoppingCarts: React.Dispatch<React.SetStateAction<IShoppingCart[]>>;
 }
 
 export const ProductContext = createContext<IProductProviderData>(
@@ -108,7 +106,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         console.log(error);
       }
     };
-    if (token) {
+    if (token && searched.length) {
       renderSearch();
     }
   }, [searched]);
@@ -124,8 +122,6 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         setSearched,
         category,
         setCategory,
-        // listShoppingCarts,
-        // setListShoppingCarts,
       }}
     >
       {children}
