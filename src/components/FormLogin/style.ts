@@ -40,7 +40,9 @@ export const Container = styled.div`
         margin-bottom: 10px;
         color: var(--color-secondary);
       }
-
+    p{
+      color: white;
+    }
     .eye-control {
       display: flex;
       position: relative;

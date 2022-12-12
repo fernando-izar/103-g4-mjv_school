@@ -42,6 +42,9 @@ export const Container = styled.div`
         color: var(--color-secondary);
       }
     }
+    p{
+      color:white
+    }
     .button-register {
       height: 45px;
       width: 100%;
