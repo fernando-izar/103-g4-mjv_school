@@ -37,15 +37,13 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
   const [newSearch, setNewSearch] = useState("");
   const [searched, setSearched] = useState("");
   const [category, setCategory] = useState("all");
-  // const [listShoppingCarts, setListShoppingCarts] = useState<IShoppingCart[]>(
-  //   []
-  // );
 
   useEffect(() => {
     const loadProducts = async () => {
       try {
         const { data } = await api.get<IProducts[]>(`products`);
-        console.log("productsList", productsList);
+
+        console.log("get->products", data);
 
         setProductsList(data);
       } catch (error) {
@@ -59,7 +57,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         const { data } = await api.get<IProducts[]>(
           `products/category/${category}`
         );
-        console.log("productsList", productsList);
+        console.log("get->products/category/:category", data);
         setProductsList(data);
       } catch (error) {
         console.log(error);
@@ -67,7 +65,6 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
       setLoadingProducts(false);
     };
 
-    console.log(category);
     if (category == "all") {
       loadProducts();
     }
@@ -88,6 +85,8 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
     const renderSearch = async () => {
       try {
         const { data } = await api.get<IProducts[]>(`products`);
+
+        console.log("get->products", data);
 
         const filtered = data.filter(
           (element) =>
@@ -113,21 +112,6 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
       renderSearch();
     }
   }, [searched]);
-
-  // useEffect(() => {
-  //   const loadShoppingCarts = async () => {
-
-  //     try {
-  //       const { data } = await api.get<IShoppingCart[]>(`carts?limit=5`);
-  //       console.log("list shopping carts", data);
-  //       setListShoppingCarts(data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   loadShoppingCarts();
-  // }, []);
 
   return (
     <ProductContext.Provider
