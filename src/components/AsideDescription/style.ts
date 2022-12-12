@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.aside`
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  
   justify-content: flex-start;
   gap: 50px;
   background: linear-gradient(
@@ -14,13 +15,33 @@ export const Container = styled.aside`
   width: 15%;
   height: 1080px;
   background-color: var(--color-primary);
+  font-family: 'Poppins';
+
+  .svgContainer{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .marketingContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    img{
+      width: 95%;
+    }
+    a{
+      color: white;
+      position: absolute;
+      bottom: 145px;
+    }
+  }
 `;
 
+
 export const SvgLogo = styled.img`
-  margin-top: 50px;
-  margin: 25px;
+ 
   width: 50%;
-  height: 155px;
-  filter: invert(99%) sepia(87%) saturate(2%) hue-rotate(34deg) brightness(111%)
-    contrast(100%);
 `;
