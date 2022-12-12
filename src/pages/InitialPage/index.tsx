@@ -34,13 +34,8 @@ export const InitialPage = () => {
           <Button
             label="Login"
             className="button"
-            BackgroundColor="var(--color-primary-gradient)"
+            BackgroundColor="var(--color-secondary)"
             linkTo="/login"
-          ></Button>
-          <Button
-            label="Cadastrar"
-            className="button"
-            linkTo="/register"
           ></Button>
         </Containerbutton>
       </MainContainer>

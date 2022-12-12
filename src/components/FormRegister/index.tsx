@@ -89,7 +89,7 @@ export const FormRegister = () => {
         <Button
           label="Login"
           className="button"
-          BackgroundColor="var(--color-primary-gradient)"
+          BackgroundColor="var(--color-secondary)"
           linkTo="/login"
         ></Button>
       </form>

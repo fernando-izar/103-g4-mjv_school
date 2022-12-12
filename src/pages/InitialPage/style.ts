@@ -18,12 +18,11 @@ export const MainContainer = styled.div`
   display: flex;
   width: 88%;
   height: 88%;
-  background: var(--color-primary);
+  background-image: url(https://raw.githubusercontent.com/fernando-izar/g4-mjv_school/develop/src/assets/backgroundInitialPage.png);
   border-radius: 15px;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 25px;
 
 `;
 
@@ -40,8 +39,8 @@ export const ContainerItens = styled.div`
 export const Containerbutton = styled.div`
   display: flex;
   width: 350px;
-  justify-content: space-between;
-  flex-direction: row;
+  justify-content: center;
+  padding: 26px;
 `;
 
 export const ContainerText = styled.div`
