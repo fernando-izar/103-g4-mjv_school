@@ -9,6 +9,7 @@ import { UserContext } from "./UserContext";
 import { api } from "../services/api";
 import { IProducts } from "../interfaces/products.interfaces";
 import { IShoppingCart } from "../interfaces/shoppingcart.interfaces";
+import { toast } from "react-toastify";
 
 interface IProductProviderProps {
   children: ReactNode;
@@ -45,6 +46,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
 
         setProductsList(data);
       } catch (error) {
+        toast.error("API Timeout");
         console.log(error);
       }
       setLoadingProducts(false);
@@ -58,6 +60,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         console.log("get->products/category/:category", data);
         setProductsList(data);
       } catch (error) {
+        toast.error("API Timeout");
         console.log(error);
       }
       setLoadingProducts(false);
@@ -103,6 +106,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
 
         setProductsList(filtered);
       } catch (error) {
+        toast.error("API Timeout");
         console.log(error);
       }
     };
