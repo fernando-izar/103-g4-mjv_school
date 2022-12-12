@@ -38,6 +38,8 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
   const [category, setCategory] = useState("all");
 
   useEffect(() => {
+    const token = localStorage.getItem("@TOKEN");
+
     const loadProducts = async () => {
       try {
         const { data } = await api.get<IProducts[]>(`products`);
@@ -66,7 +68,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
       setLoadingProducts(false);
     };
 
-    if (category == "all") {
+    if (category == "all" && token) {
       loadProducts();
     }
 
@@ -76,7 +78,9 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
       category == "men's clothing" ||
       category == "women's clothing"
     ) {
-      LoadProductsByCategory();
+      if (token) {
+        LoadProductsByCategory();
+      }
     }
   }, [loadingProducts, category]);
 
