@@ -1,13 +1,10 @@
 import { keyframes } from "styled-components";
 import styled from "styled-components";
 
-
-
-
 export const Container = styled.div`
   display: flex;
   background-color: var(--color-secondary);
-  font-family: 'Poppins';
+  font-family: "Poppins";
   .product-not-found {
     display: flex;
     font-size: 100px;
@@ -93,7 +90,7 @@ export const Container = styled.div`
     text-align: center;
     justify-content: space-between;
     padding: 10px;
-    h2{
+    h2 {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 9;
@@ -121,35 +118,47 @@ export const Container = styled.div`
       align-items: center;
     }
     .buttonContainer {
-      width: 180px;
+      height: 75px;
+      width: 100%;
       gap: 20px;
-      height: 150px;
       max-width: 100vh;
+      padding-left: 10%;
+      padding-right: 10%;
+      margin-top: 20px;
+
       display: flex;
       flex-direction: column;
-      align-items: center;
+      justify-content: center;
+      justify-content: center;
+
+      border-radius: 2px;
+      border: 1px solid #414141;
+      color: black;
+      font-weight: 600;
+      font-family: "Poppins";
+      font-size: 13px;
+      text-align: center;
     }
   }
-  .loadContainer{
+  .loadContainer {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    img{
-      
+    img {
       width: 100px;
       height: 100px;
     }
   }
-  h1{
+  h1 {
     font-size: 35px;
   }
-  h2{
+  h2 {
     font-size: 20px;
     font-weight: 300;
   }
-  h3{
+  h3 {
     font-size: 15px;
   }
   h4 {

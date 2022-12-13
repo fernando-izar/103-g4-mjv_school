@@ -48,8 +48,6 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
         setUsers(data);
       } catch (error) {
-        toast.error("API Timeout");
-
         console.log(error);
       }
     };
@@ -81,7 +79,6 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
           setUserCarts(responseUserCartsData);
         } catch (error) {
-          toast.error("API Timeout");
           console.log(error);
         }
       }
