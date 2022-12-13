@@ -9,6 +9,7 @@ import { UserContext } from "./UserContext";
 import { api } from "../services/api";
 import { IProducts } from "../interfaces/products.interfaces";
 import { IShoppingCart } from "../interfaces/shoppingcart.interfaces";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 interface IProductProviderProps {
@@ -25,6 +26,9 @@ interface IProductProviderData {
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;
   productsListDB: IProducts[];
+  isModalProduct: boolean;
+  setIsModalProduct: React.Dispatch<React.SetStateAction<boolean>>;
+  addProductToCart: () => void;
 }
 
 export const ProductContext = createContext<IProductProviderData>(
@@ -34,11 +38,19 @@ export const ProductContext = createContext<IProductProviderData>(
 export const ProductProvider = ({ children }: IProductProviderProps) => {
   const [productsList, setProductsList] = useState<IProducts[]>([]);
   const [productsListDB, setProductsListDB] = useState<IProducts[]>([]);
-
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [newSearch, setNewSearch] = useState("");
   const [searched, setSearched] = useState("");
   const [category, setCategory] = useState("all");
+  const [isModalProduct, setIsModalProduct] = useState(false);
+
+  const navigate = useNavigate();
+
+  const addProductToCart = () => {
+    setIsModalProduct(false);
+    navigate("/shoppingcart", { replace: true });
+    toast.success("Produto adicionado com sucesso!");
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("@TOKEN");
@@ -52,7 +64,6 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         setProductsList(data);
         setProductsListDB(data);
       } catch (error) {
-        toast.error("API Timeout");
         console.log(error);
       }
       setLoadingProducts(false);
@@ -66,7 +77,6 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         console.log("get->products/category/:category", data);
         setProductsList(data);
       } catch (error) {
-        toast.error("API Timeout");
         console.log(error);
       }
       setLoadingProducts(false);
@@ -112,7 +122,6 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
 
         setProductsList(filtered);
       } catch (error) {
-        toast.error("API Timeout");
         console.log(error);
       }
     };
@@ -133,6 +142,9 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         category,
         setCategory,
         productsListDB,
+        isModalProduct,
+        setIsModalProduct,
+        addProductToCart,
       }}
     >
       {children}
