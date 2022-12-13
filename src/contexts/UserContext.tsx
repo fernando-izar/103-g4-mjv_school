@@ -71,6 +71,12 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
           setUser(responseUserData);
 
+          const { data: userData } = await api.get<IUser[]>(`users`);
+
+          console.log("get->users", userData);
+
+          setUsers(userData);
+
           const { data: responseUserCartsData } = await api.get<
             IShoppingCart[]
           >(`carts/user/${userId}`);
