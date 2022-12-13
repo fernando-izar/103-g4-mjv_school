@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { ProductContext } from "../../contexts/ProductContext";
 import { ModalProduct } from "../../components/ModalProduct";
 
-import MJVLoad from "../../assets/MJVLoad.gif";
+import  MJVLoad  from "../../assets/MJVLoad.gif";
 
 import { HeaderDashboard } from "../../components/HeaderDashboard";
 import { HeaderDescription } from "../../components/HeaderDescription";
@@ -95,8 +95,6 @@ export const Description = () => {
               <hr></hr>
               <h3>Rate: {product.rating.rate}</h3>
               <hr></hr>
-              <h2>{product.description}</h2>
-              <br></br>
               <h2>{product.description}</h2>
             </ol>
 

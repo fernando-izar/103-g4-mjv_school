@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  background-color: #ebebeb;
+  background-color: var(--color-secondary);
   font-family: 'Poppins';
   .product-not-found {
     display: flex;
@@ -57,7 +57,7 @@ export const Container = styled.div`
     border-radius: 5px;
   }
   .bodyContainer .descriptionContainer .cardProduct .imageContainer img {
-    width: 90%;
+    width: 75%;
     :nth-child(even) {
       margin-top: -2px;
       filter: blur(1px);
@@ -93,6 +93,15 @@ export const Container = styled.div`
     text-align: center;
     justify-content: space-between;
     padding: 10px;
+    h2{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 9;
+      font-size: 15px;
+      font-weight: 400;
+      overflow: hidden;
+      text-align: center;
+    }
   }
   .buyContainer {
     width: 25%;
