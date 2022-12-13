@@ -2,5 +2,5 @@ import axios from "axios";
 
 export const api = axios.create({
   baseURL: "https://fakestoreapi.com/",
-  timeout: 30000,
+  timeout: 20000,
 });

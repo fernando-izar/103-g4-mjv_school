@@ -9,6 +9,7 @@ import { UserContext } from "./UserContext";
 import { api } from "../services/api";
 import { IProducts } from "../interfaces/products.interfaces";
 import { IShoppingCart } from "../interfaces/shoppingcart.interfaces";
+import { toast } from "react-toastify";
 
 interface IProductProviderProps {
   children: ReactNode;
@@ -23,6 +24,7 @@ interface IProductProviderData {
   setSearched: React.Dispatch<React.SetStateAction<string>>;
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;
+  productsListDB: IProducts[];
 }
 
 export const ProductContext = createContext<IProductProviderData>(
@@ -31,12 +33,16 @@ export const ProductContext = createContext<IProductProviderData>(
 
 export const ProductProvider = ({ children }: IProductProviderProps) => {
   const [productsList, setProductsList] = useState<IProducts[]>([]);
+  const [productsListDB, setProductsListDB] = useState<IProducts[]>([]);
+
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [newSearch, setNewSearch] = useState("");
   const [searched, setSearched] = useState("");
   const [category, setCategory] = useState("all");
 
   useEffect(() => {
+    const token = localStorage.getItem("@TOKEN");
+
     const loadProducts = async () => {
       try {
         const { data } = await api.get<IProducts[]>(`products`);
@@ -44,7 +50,9 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         console.log("get->products", data);
 
         setProductsList(data);
+        setProductsListDB(data);
       } catch (error) {
+        toast.error("API Timeout");
         console.log(error);
       }
       setLoadingProducts(false);
@@ -58,6 +66,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         console.log("get->products/category/:category", data);
         setProductsList(data);
       } catch (error) {
+        toast.error("API Timeout");
         console.log(error);
       }
       setLoadingProducts(false);
@@ -103,6 +112,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
 
         setProductsList(filtered);
       } catch (error) {
+        toast.error("API Timeout");
         console.log(error);
       }
     };
@@ -122,6 +132,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         setSearched,
         category,
         setCategory,
+        productsListDB,
       }}
     >
       {children}
