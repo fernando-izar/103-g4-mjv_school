@@ -25,6 +25,8 @@ interface IProductProviderData {
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;
   productsListDB: IProducts[];
+  isModalProduct: boolean;
+  setIsModalProduct: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const ProductContext = createContext<IProductProviderData>(
@@ -34,11 +36,11 @@ export const ProductContext = createContext<IProductProviderData>(
 export const ProductProvider = ({ children }: IProductProviderProps) => {
   const [productsList, setProductsList] = useState<IProducts[]>([]);
   const [productsListDB, setProductsListDB] = useState<IProducts[]>([]);
-
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [newSearch, setNewSearch] = useState("");
   const [searched, setSearched] = useState("");
   const [category, setCategory] = useState("all");
+  const [isModalProduct, setIsModalProduct] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("@TOKEN");
@@ -133,6 +135,8 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         category,
         setCategory,
         productsListDB,
+        isModalProduct,
+        setIsModalProduct,
       }}
     >
       {children}

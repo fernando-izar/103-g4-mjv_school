@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { IProducts } from "../../interfaces/products.interfaces";
-
+import { useContext } from "react";
+import { ProductContext } from "../../contexts/ProductContext";
+import { ModalProduct } from "../../components/ModalProduct";
 
 import MJVLoad from "../../assets/MJVLoad.gif";
 
@@ -14,9 +16,11 @@ import { AsideDashboard } from "../../components/AsideDashboard";
 import { AsideDescription } from "../../components/AsideDescription";
 import { Button } from "../../components/Button";
 import { Main } from "../../styles/main";
+import { FormOrderProduct } from "../../components/FormOrderProduct";
 
 export const Description = () => {
   const { id } = useParams();
+  const { isModalProduct } = useContext(ProductContext);
   const [product, setProduct] = useState<IProducts | null>(null);
   const [loadingProduct, setLoadingProduct] = useState(true);
 
@@ -121,6 +125,12 @@ export const Description = () => {
           </div>
         </div>
       </div>
+
+      {isModalProduct && (
+        <ModalProduct>
+          <FormOrderProduct />
+        </ModalProduct>
+      )}
     </Container>
   );
 };
