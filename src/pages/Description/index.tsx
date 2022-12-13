@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { IProducts } from "../../interfaces/products.interfaces";
+import { useContext } from "react";
+import { ProductContext } from "../../contexts/ProductContext";
+import { ModalProduct } from "../../components/ModalProduct";
 
 import MJVLoad from "../../assets/MJVLoad.gif";
 
@@ -13,9 +16,11 @@ import { AsideDashboard } from "../../components/AsideDashboard";
 import { AsideDescription } from "../../components/AsideDescription";
 import { Button } from "../../components/Button";
 import { Main } from "../../styles/main";
+import { FormOrderProduct } from "../../components/FormOrderProduct";
 
 export const Description = () => {
   const { id } = useParams();
+  const { isModalProduct, setIsModalProduct } = useContext(ProductContext);
   const [product, setProduct] = useState<IProducts | null>(null);
   const [loadingProduct, setLoadingProduct] = useState(true);
 
@@ -91,8 +96,6 @@ export const Description = () => {
               <h3>Rate: {product.rating.rate}</h3>
               <hr></hr>
               <h2>{product.description}</h2>
-              <br></br>
-              <h2>{product.description}</h2>
             </ol>
 
             <div className="buyContainer">
@@ -101,25 +104,31 @@ export const Description = () => {
                 <h4>{product.description}</h4>
                 <h4>Quantidade restante: {product.rating.count}</h4>
                 <h4> Valor: ${product.price}</h4>
-                <div className="buttonContainer">
-                  {/* <Button
-                    label="COMPRAR AGORA"
-                    className="button"
-                    BackgroundColor="var(--action-primary)"
-                    linkTo="/Dashboard"
-                  ></Button> */}
-                  <Button
+                {/* <div className="buttonContainer"> */}
+                {/* <Button
                     label="COLOCAR NO CARRINHO"
                     className="button"
                     BackgroundColor="grey"
                     linkTo="/Dashboard"
-                  ></Button>
-                </div>
+                  ></Button> */}
+                {/* </div> */}
+                <button
+                  className="buttonContainer"
+                  onClick={() => setIsModalProduct(true)}
+                >
+                  COLOCAR NO CARRINHO
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {isModalProduct && (
+        <ModalProduct>
+          <FormOrderProduct />
+        </ModalProduct>
+      )}
     </Container>
   );
 };
