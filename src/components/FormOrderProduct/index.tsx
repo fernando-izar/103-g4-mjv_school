@@ -21,6 +21,7 @@ export const FormOrderProduct = () => {
       </h2>
       <img className="product-img" src={product[0].image} alt="product-img" />
       <p className="product-title">Produto: {product[0].title}</p>
+      <h3 className="product-price">Valor Unitário: ${product[0].price}</h3>
       <input
         className="product-input-quantity"
         type="number"
