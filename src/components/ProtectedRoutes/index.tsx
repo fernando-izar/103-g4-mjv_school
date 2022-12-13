@@ -2,15 +2,22 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { Navigate, Outlet } from "react-router-dom";
 
-import { Container } from "./style";
+import  MJVLoad  from "../../assets/MJVLoad.gif" 
+
+import { Main } from "../../styles/main";
 
 export const ProtectedRoutes = () => {
   const { loading, user } = useContext(UserContext);
   if (loading) {
     return (
-      <Container>
-        <h2>...loading</h2>
-      </Container>
+      <Main>
+        <div className="loadContainer">
+          <img src={MJVLoad} alt="" />
+        </div>
+        <div className="bodyContainer">
+          
+        </div>
+      </Main>
     );
   }
 

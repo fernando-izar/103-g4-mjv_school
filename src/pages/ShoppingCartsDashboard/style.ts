@@ -9,18 +9,31 @@ export const Container = styled.div`
   .main-content {
     width: 85%;
     height: 63vh;
+    h1{
+      margin-left: 150px;
+      margin-bottom: 20px;
+    }
+    
+    .dashboard{
+      background-color: white;
+      border: solid 1px black;
+      display: flex;
+      width: 82%;
+      padding: 20px;
+      border-radius: 10px;
+      margin-left: 10%;
+    }
 
-    .back-to-dashboard {
-      width: 115px;
-      height: 25px;
-      background: #000000;
-      padding: 10px;
-      text-align: center;
-      border-radius: 5px;
-      color: white;
-      font-weight: bold;
-      line-height: 25px;
-      margin-left: 5px;
+    .button-container{
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 20%;
+      padding: 0 50px 20px 50px;
+      border-radius: 10px;
+      border: solid 1px var(--color-primary);
     }
 
     .marketingContainer {

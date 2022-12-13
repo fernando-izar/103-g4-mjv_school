@@ -23,7 +23,7 @@ export const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
+  padding: 25px;
 `;
 
 export const ContainerItens = styled.div`
@@ -59,6 +59,10 @@ export const ContainerText = styled.div`
   h1{
     font-size: 30px;
     font-weight: 600;
+    margin-bottom: 55px;
+  }
+  h3{
+    margin-bottom: 50px;
   }
 
 `;
