@@ -12,8 +12,8 @@ export const Container = styled.div`
   background: rgba(0, 0, 0, 0.5);
 
   .modal-product-box {
-    width: 300px;
-    height: 342px;
+    width: 400px;
+    height: 500px;
 
     background-color: var(--color-primary);
 

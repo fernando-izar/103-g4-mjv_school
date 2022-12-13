@@ -23,6 +23,11 @@ export const Container = styled.div`
     font-family: "Poppins";
   }
 
+  .product-price {
+    color: white;
+    font-family: "Poppins";
+  }
+
   .product-input-quantity {
     width: 30%;
   }
