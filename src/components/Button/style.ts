@@ -18,7 +18,7 @@ export const Containerbutton = styled(Link)`
     margin-top:20px;
 
     border-radius: 2px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #414141;
     
     color: black;
     font-weight: 600;

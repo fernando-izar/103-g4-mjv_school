@@ -4,7 +4,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { Card } from "../Card";
 import { Container } from "./style";
 import { Main } from "../../styles/main";
-import  MJVLoad  from "../../assets/MJVLoad.webp" 
+import  MJVLoad  from "../../assets/MJVLoad.gif" 
 
 
 
