@@ -7,7 +7,7 @@ export const ShoppingCart = ({
   products,
   date,
 }: IShoppingCartToRender) => {
-  const { productsList } = useContext(ProductContext);
+  const { productsListDB } = useContext(ProductContext);
 
   return (
     <Container>
@@ -15,7 +15,7 @@ export const ShoppingCart = ({
       <div className="date">{date}</div>
       <ul className="ul-products">
         {products.map((element) => {
-          const product = productsList.filter(
+          const product = productsListDB.filter(
             (item) => item.id == element.productId
           );
 

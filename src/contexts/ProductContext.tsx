@@ -24,6 +24,7 @@ interface IProductProviderData {
   setSearched: React.Dispatch<React.SetStateAction<string>>;
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;
+  productsListDB: IProducts[];
 }
 
 export const ProductContext = createContext<IProductProviderData>(
@@ -32,6 +33,8 @@ export const ProductContext = createContext<IProductProviderData>(
 
 export const ProductProvider = ({ children }: IProductProviderProps) => {
   const [productsList, setProductsList] = useState<IProducts[]>([]);
+  const [productsListDB, setProductsListDB] = useState<IProducts[]>([]);
+
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [newSearch, setNewSearch] = useState("");
   const [searched, setSearched] = useState("");
@@ -47,6 +50,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         console.log("get->products", data);
 
         setProductsList(data);
+        setProductsListDB(data);
       } catch (error) {
         toast.error("API Timeout");
         console.log(error);
@@ -68,7 +72,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
       setLoadingProducts(false);
     };
 
-    if (category == "all" && token) {
+    if (category == "all") {
       loadProducts();
     }
 
@@ -78,9 +82,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
       category == "men's clothing" ||
       category == "women's clothing"
     ) {
-      if (token) {
-        LoadProductsByCategory();
-      }
+      LoadProductsByCategory();
     }
   }, [loadingProducts, category]);
 
@@ -130,6 +132,7 @@ export const ProductProvider = ({ children }: IProductProviderProps) => {
         setSearched,
         category,
         setCategory,
+        productsListDB,
       }}
     >
       {children}
