@@ -7,14 +7,24 @@ export const Container = styled.div`
   font-family: "Poppins";
   .product-not-found {
     display: flex;
+    width: 100%;
+    height: 100%;
     font-size: 100px;
     flex-direction: column;
-    height: 100vh;
-
+    align-items: center;
+    justify-content: space-around;
+    .dinos{
+      width: 650px;
+    }
     .product-not-found-paragraph {
       margin-bottom: 92px;
       font-size: 100px;
     }
+    .button-container{
+      width: 400px;
+      margin-bottom: 50px;
+    }
+    
   }
 
   .main-content {
@@ -122,14 +132,6 @@ export const Container = styled.div`
       width: 100%;
       gap: 20px;
       max-width: 100vh;
-      padding-left: 10%;
-      padding-right: 10%;
-      margin-top: 20px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      justify-content: center;
 
       border-radius: 2px;
       border: 1px solid #414141;
