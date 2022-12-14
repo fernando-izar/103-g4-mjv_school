@@ -40,7 +40,8 @@ export const Containerbutton = styled.div`
   display: flex;
   width: 350px;
   justify-content: center;
-  padding: 26px;
+  padding: 10px;
+  
 `;
 
 export const ContainerText = styled.div`

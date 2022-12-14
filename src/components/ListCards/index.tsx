@@ -13,8 +13,7 @@ export const ListCards = () => {
 
   if (loadingProducts) {
     return (
-      
-
+  
       <Main>
         <div className="loadContainer">
           <img src={MJVLoad} alt="" />

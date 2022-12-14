@@ -9,6 +9,7 @@ import { ProductContext } from "../../contexts/ProductContext";
 import { ModalProduct } from "../../components/ModalProduct";
 
 import MJVLoad from "../../assets/MJVLoad.gif";
+import PageNotExist from "../../assets/PageNotExist.png";
 
 import { HeaderDashboard } from "../../components/HeaderDashboard";
 import { HeaderDescription } from "../../components/HeaderDescription";
@@ -56,17 +57,30 @@ export const Description = () => {
 
   if (!product) {
     return (
-      <Main>
-        <Container>
-          <div className="product-not-found">
-            <p className="product-not-found-paragraph">Product not found</p>
+      <Container>
+      <AsideDescription />
+      <div className="main-content">
+        <HeaderDescription />
 
-            <Link className="product-not-found-link" to="/dashboard">
-              Voltar
-            </Link>
+        <div className="product-not-found">
+        <h1>Produto não existe!</h1>
+          <img className="dinos" src={PageNotExist} alt="" />
+
+        <div className="button-container">
+        <Button 
+          label="Voltar para produtos"
+          linkTo="/dashboard"
+          BackgroundColor="grey"
+          className="button"
+          />
+        </div>
+
+          
           </div>
-        </Container>
-      </Main>
+        <div className="bodyContainer"></div>
+        
+      </div>
+    </Container>
     );
   }
 
