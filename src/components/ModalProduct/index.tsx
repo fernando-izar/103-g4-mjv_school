@@ -28,7 +28,10 @@ export const ModalProduct = ({ children }: IModalProductProps) => {
   return (
     <Container>
       <div className="modal-product-box" ref={modalRef}>
-        {children}
+        <div className="div-container">
+          {children}
+        </div>
+        
       </div>
     </Container>
   );
